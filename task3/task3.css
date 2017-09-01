@@ -1,0 +1,78 @@
+html{
+		font-size: 62.5%;
+	}
+
+	body{
+		padding:0.1rem;
+		background-color: #68CDD5;
+	}
+	p{
+		color: white;
+	}
+	img{
+		width: 80%;
+		height: auto;
+	}
+	.box1{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		text-align: center;
+		width: 100%;
+		padding: 0;
+	}
+	.box2{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		width: 100%;
+		padding: 0;
+	}
+	.back{
+		width: 1.5rem;
+		padding: 3rem;
+		background-image: url(images/head.png);
+		background-repeat: no-repeat;
+		background-size: 3.7rem;
+		background-position: 10% 10%;
+	}
+	.logo{	
+		width: 50%;
+		padding: 4.3rem 25%;
+		background-image: url(images/log.png);
+		background-repeat: no-repeat;
+		background-size: 13rem;
+		background-position: 50% 33%;
+	}
+	.text{
+		width: 74%;
+		padding: 3% 13% 7% 13%;
+		text-align:left;
+		font-size: 1.5rem;
+		}
+
+		@media screen and  (min-width: 1024px) {
+		.text {
+			text-align: center;
+		}
+	}
+	.left{
+		width: 50%;
+		padding: 20rem 5rem 5rem;
+		text-align: center;	
+		background-image: url(images/left.png);
+		background-repeat: no-repeat;
+		background-size: 6rem;
+		background-position: 50% 57%;
+		font-size: 1.7rem;
+	}
+	.right{
+		width: 50%;
+		padding: 20rem 5rem 5rem;
+		text-align: center;
+		background-image: url(images/right.png);
+		background-repeat: no-repeat;
+		background-size: 6rem;
+		background-position: 50% 57%;
+		font-size: 1.7rem;
+	}
