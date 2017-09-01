@@ -39,17 +39,22 @@ img{
 	height: 5rem;
 }
 .text-left{
-	float: left;
-	width: 33%;
+	position: absolute;
+	top: 0.2%;
+	left: 1.5rem;
+	max-width: 100%;
 	padding: 0;
 	margin: 15px 0;
 	font-size: 1.3rem;
 	color: white;
-	text-align: left;
+	text-align: center;
 }
 .text-log{
-	float: left;
-	width: 33%;
+	position: absolute;
+	top: 0.15%;
+	left: 40%;
+	right: 40%;
+	max-width: 100%;
 	padding: 0;
 	margin: 15px 0;
 	font-size: 1.5rem;
@@ -57,22 +62,21 @@ img{
 	text-align: center;
 }
 .text-right{
-	float: left;
-	width: 33%;
+	position: absolute;
+	top: 0.2%;
+	right: 1.5rem;
+	max-width: 100%;
 	padding: 0;
 	margin: 15px 0;
 	font-size: 1.3rem;
 	color: white;
-	text-align: right;
+	text-align: center;
 }
 
 .header{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 96%;
-	height: auto;
-	padding: 0 2% 0 2%;
+	width: 100%;
+	height: 5rem;
+	padding: 0;
 	margin: 0;
     background-color: #5FC0CD;
 }
@@ -103,7 +107,7 @@ a:active{
 	justify-content: center;
 	height: 5rem;
 	padding: 1rem 0 0 0;
-	margin: 5rem 0 0 0 ;
+	margin: 0 ;
 }
 .sky{
 	display: flex;
