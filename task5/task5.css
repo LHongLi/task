@@ -1,0 +1,56 @@
+html{
+	font-size: 62.5%;
+
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	max-width: 100%;
+	height: auto;
+	padding: 1rem 0rem 1rem 1rem;
+	color: #FFFFFF;
+	background-color: #5FC0CD;
+	text-align: left;
+}
+.top{
+	position: absolute;
+	left: 35%;
+	right: 35%;
+	font-size: 1.5rem;
+	text-align: center;
+	max-width: 100%;
+}
+
+.main{
+	max-width: 100%;
+	height: auto;
+}
+.background{
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: url(image/背景.png) no-repeat ;
+	background-size: 100% auto;	
+	color: #FFFFFF;
+}
+.avatar{
+	float: left;
+
+}
+.personal{
+	float: left;
+	padding-left: 4rem;
+
+}
+.name{
+	font-size: 1.5rem;
+
+}
+.address{
+	line-height: 50%;
+	font-size: 1rem;
+
+}

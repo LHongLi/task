@@ -1,0 +1,3 @@
+header color :#5fc0cd
+text color: #b3b3b3
+            #f0b0b1	
