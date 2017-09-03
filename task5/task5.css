@@ -6,8 +6,16 @@ body{
 	margin: 0;
 	padding: 0;
 }
+p{
+	margin: 0;
+}
+ul{
+	margin: 0;
+
+}
 .header{
-	max-width: 100%;
+	position: fixed;
+	width: 100%;
 	height: auto;
 	padding: 1rem 0rem 1rem 1rem;
 	color: #FFFFFF;
@@ -25,32 +33,104 @@ body{
 
 .main{
 	max-width: 100%;
-	height: auto;
+
+	display: flex;
+	flex-direction: column;
 }
 .background{
-	float: left;
+	display: flex;
+	align-items: center;
 	width: 100%;
+	height: 14.5rem;
 	padding: 0;
-	margin: 0;
+	margin-top: 4.15rem;
 	background: url(image/背景.png) no-repeat ;
-	background-size: 100% auto;	
+	background-size: cover;	
 	color: #FFFFFF;
 }
-.avatar{
-	float: left;
+.background-avatar{
+	padding-left: 2rem;
 
 }
-.personal{
-	float: left;
-	padding-left: 4rem;
+.background-personal{	
+	padding-left: 2rem;
 
 }
-.name{
-	font-size: 1.5rem;
+
+.personal-name{
+	font-size: 1.56rem;
+	padding-bottom: 5px;
 
 }
-.address{
+.personal-address{
 	line-height: 50%;
-	font-size: 1rem;
+	font-size: 1.3rem;
 
+}
+.details{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.skill{
+	display: flex;
+	justify-content: flex-start;
+	padding: 2rem 0 2rem 1rem;
+	width: 100%;
+	font-size: 1.3rem;
+	border-bottom: 1px solid #A9A9A9;
+
+}
+
+.skill p {
+	padding-left: 0.7rem;	
+	border-left: 2px #5FC0CD solid;
+}
+.claim{
+	padding: 0 1rem 0 1rem;
+	
+
+}
+.claim-top{
+	font-size: 1.3rem;
+	padding: 1.5rem 1rem;
+	border-bottom: 1px #A9A9A9 solid;
+	color: #000000;
+
+}
+.claim-other{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 1.5rem 1rem;
+	font-size: 1.3rem;
+	border-bottom: 1px #A9A9A9 solid;
+
+}
+.left{
+	text-align: center;
+	line-height: -100%;
+	width: 6rem;
+	margin: 0;
+	padding-right: 1rem;
+	border-right: 1.2px #A9A9A9 solid;
+	color: #A9A9A9;
+}
+.left-bottom{
+	text-align: center;
+	line-height: -100%;
+	width: 6rem;
+	margin: 0;
+	padding-right: 1rem;
+	border-right: 1.2px #A9A9A9 solid;
+	color: #A9A9A9;
+}
+.right{
+	width: 80%;
+	padding-left: 5px;
+
+}
+.right-red{
+	width: 80%;
+	padding-left: 5px;
+	color: #FF0000;
 }
