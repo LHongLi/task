@@ -13,6 +13,9 @@ ul{
 	margin: 0;
 
 }
+a{
+	text-decoration: none;
+}
 .header{
 	position: fixed;
 	width: 100%;
@@ -26,7 +29,7 @@ ul{
 	position: absolute;
 	left: 35%;
 	right: 35%;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	max-width: 100%;
 }
@@ -134,3 +137,39 @@ ul{
 	padding-left: 5px;
 	color: #FF0000;
 }
+.last{
+	display: flex;
+	position: fixed;
+	bottom: 0;
+    height: auto;
+    width:98%;
+    padding: 1%;
+    margin-right: 1%; 
+    font-size: 1.5rem;	
+    background-color: #FFFFFF;
+}
+.last-left{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	padding: 1rem;
+	margin-right: 1rem;
+	border: solid 1.5px #5FC0CD;
+	border-radius: 5px;
+	color: #5FC0CD;
+	background-color: #FFFFFF;
+}
+.last-right{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	padding: 1rem;
+	margin: 0;
+	border: solid 1.5px #5FC0CD;
+	border-radius: 5px;
+	color: #FFFFFF;
+	background-color: #5FC0CD;
+}
+.
