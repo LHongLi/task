@@ -1,5 +1,7 @@
 html{
 	font-size: 62.5%;
+	-webkit-column-count:2;
+    -webkit-column-gap:30px;
 
 }
 body{
