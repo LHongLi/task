@@ -11,91 +11,155 @@ div p{
 	margin: 0;
 	padding: 0;
 }
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-outline: none; 
+div.container div.row div {
+	text-align:center;
 }
 .header{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: fixed;
+	top: 0;
+	right: 0;
 	width: 100%;
-	height: 4rem;
+	height: 5rem;
+	z-index: 3;
+	text-align: center;
+	line-height: 5rem;
 	background-color: #58C0CD;
 }
+
 .header-left{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	border-radius: 5px;
 	background-color: #55A8B3;
-	color: #FFFFFF;	         
+	color: #FFFFFF;
+	border: none;	         
 }
 .header-right{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.7rem;
-	border-radius: 4px;
+	font-size: 1.5rem;
+	border-radius: 5px;
 	color: #5FC0CD;
 	background-color: #FFFFFF;
+	border: none;
 }
 .header img{
 	position: fixed;
-	top: 7px;
+	top: 1.2rem;
 	right: 1.5rem;
 }
-.main-top{
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	position: fixed;
+.main{
+	position: absolute;
+	top: 5rem;
+	bottom: 5rem;
 	left: 0;
-	right: 0;
+	z-index: 2;
 	width: 100%;
-	border-bottom: 1px solid #AAA; 
+	height: max-content;
+	padding: 0;
+	margin: 0;
+}
+.main-top{
+	width: 100%;
+	margin: 0;
+	border-bottom: 1px solid #AAA;
 }
 .top-content{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.2rem;
-	width: 100%；
-	height: 3rem;
+	border-right: solid 1px #DCDCDC;	
 	color: #AAA;
+	padding: 0;
+}
+.menu-right{
+	border-right: none;
+}
+.top-content .btn{
+	border: none;
+	border-radius: 0;
+	background-color: #FFFFFF;
+	padding: 0.5rem;
+	width: 100%;
+	text-align: center;
+}
+.menu{
+	text-align: center;
+	min-width: 100%;
+	padding: 0;
+}
+.dropdown-menu>li>a {
+	display: block;
+	padding: 0;
+	clear: both;
+	font-weight: 400;
+	line-height: 1.42857143;
+	color: #333;
+	white-space: nowrap;
 }
 .list{
-
+	border-bottom: #AAA solid 1px;
+	font-size: 1.2rem
+}
+.list i{
+	background: url(image/main-sprite.png) no-repeat;
+	background-size: 4rem auto;
 }
 .list-header{
+	font-size: 1.2rem;
+	margin-top: 0.5rem;
+	margin-left: 0.5rem;
 	color: #AAA;
-
 }
-.list-main{
+.list-header i{
+	display: inline;
+	float: left;
+	height: 1.2rem;
+	width: 1.2rem;
+	background-position:-28px 0;
+	margin: 0.3rem 0.5rem;
+}
 
+.list-main{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.7rem;
+}
+.list-main p{
+	display: flex;
+	align-items: center;
+	padding-left: 2.7rem;
 }
 .money{
 	color: #FF0000;
-
+	font-size: 1.35rem;
+}
+.money i{
+	float: right;
+	height: 1.3rem;
+	width: 0.765rem;
+	margin: 0 1rem;
+	background: no-repeat url(image/right.png);
+	background-size: 0.765rem 1.34rem;
 }
 .list-footer{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 	color: #AAA;
+}
 
+.list-footer i{
+	float: left;
+	height: 11.5px;
+	width: 9.5px;
+	background-position: -14.5px 0;
+	margin: 0.3rem 0.5rem 0 1.15rem;
 }
 
 
 .footer{
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
 	position: fixed;
 	bottom: 0;
+	left: 0;
 	width: 100%;
+	z-index: 3;
 	height: 5rem;
 	background-color: #F8FAFB;
 }
@@ -104,9 +168,11 @@ outline: none;
 	flex-wrap: wrap;
 	flex-direction: column;
 	align-items: center;
-	position: relative;
-	right: 15%;
+	border: none;
+	padding: 7px 0 0 0 ;
+	width: 46.5%;
 	color: #5FC0CD;
+	background-color: #F8FAFB;
 }
 .footer-center{
 	border: solid 1px #5FC0CD;
@@ -119,10 +185,39 @@ outline: none;
 	flex-wrap: wrap;
 	flex-direction: column;
 	align-items: center;
-	position: relative;
-	left: 15%;
+	border: none;
+	padding: 7px 0 0 0 ;
+	width: 46.5%;
 	color: #999999;
+	background-color: #F8FAFB;
 }
+
 .footer p{
-	margin: 5px 0 3px;
+	font-size: 1rem;
+	margin: 0;
+}
+btn-info.active, .btn-info:active, .open>.dropdown-toggle.btn-info {
+	color: #F8FAFB;
+	background-color: blue!important;
+	border-color: #F8FAFB;
+}
+.btn-info:hover {
+	color: #F8FAFB;
+	background-color: black;
+	border: none;
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+    color: #FFFFFF; 
+    background-color: #5FC0CD; 
+    border-color: #adadad; 
+}
+.btn-default:hover {
+    color: #FFFFFF;
+    background-color: #5FC0CD;
+    border-color: #adadad;
+}
+.btn-default.focus, .btn-default:focus {
+    color: #5FC0CD;
+    background-color: #FFFFFF;
+    border-color: #8c8c8c;
 }
