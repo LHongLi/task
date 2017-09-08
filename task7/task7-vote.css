@@ -1,0 +1,79 @@
+html{
+	font-size: 62.5%;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+header{
+	line-height: 4rem;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 4rem;
+	text-align: center;
+	font-size: 1.8rem;
+	color: #FFF;
+	background:   url(image/投票/header-left.png) no-repeat,
+						url(image/投票/header-right.png) no-repeat;
+	background-color: #29bde0;
+	background-size: 1.95rem 2rem,1.95rem 2rem;
+	background-position: 1% 50% , 99% 50%;
+}
+main{
+	padding: 4rem 0 0 0;
+}
+.main-top{
+	display: inline-block;
+	line-height: 4rem;
+	width: 100%;
+	height: 4rem;
+	padding: 0 30% 0 2%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-color: #b9e9f5;
+	background:  #b9e9f5 url(image/投票/main-top.png) no-repeat 95% 50%;
+	background-size: 3rem 3rem;
+}
+.triangle{
+	width: 0px;
+	height: 0px;
+	border-width: 10px 7px 0px 7px;
+	border-color: #b9e9f5 transparent;
+	border-style: solid;
+	margin-top: -8px;
+	margin-left: 3rem; 
+}
+.avatar{
+	position: fixed;
+	top: 8rem;
+	width: 100%;
+	min-height: 100%;
+	background-color: #29bde0;
+
+}
+.avatar div{
+	float: left;
+	display: inline-block;
+	line-height: 8rem;
+	text-align: center;
+	width: 10rem;
+	height: 10rem;
+	font-size: 2rem;
+	margin: 2rem 2rem 0 2rem;
+	border: solid 2px #FFF;
+	color: #000;
+	background-color: #f5c97b;
+}
+.number{
+	float: bottom;
+	display: inline-block;
+	line-height: 1rem;
+	text-align: center;
+	width: 100%;
+	height: 1rem;
+	font-size: 0.8rem;
+	color: #FFF;
+	background-color: #83b09a;
+}
