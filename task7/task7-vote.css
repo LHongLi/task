@@ -1,13 +1,11 @@
-html{
+html body{
 	font-size: 62.5%;
+	height: 100%;
 }
-body{
-	margin: 0;
-	padding: 0;
-}
+	
 header{
 	line-height: 4rem;
-	position: fixed;
+	position: relative;
 	top: 0;
 	right: 0;
 	width: 100%;
@@ -15,20 +13,24 @@ header{
 	text-align: center;
 	font-size: 1.8rem;
 	color: #FFF;
-	background:   url(image/投票/header-left.png) no-repeat,
-						url(image/投票/header-right.png) no-repeat;
+	background: url(image/投票/header-left.png) no-repeat,
+				url(image/投票/header-right.png) no-repeat;
 	background-color: #29bde0;
 	background-size: 1.95rem 2rem,1.95rem 2rem;
-	background-position: 1% 50% , 99% 50%;
+	background-position: 3% 50% , 97% 50%;
 }
 main{
-	padding: 4rem 0 0 0;
+	position: absolute;
+	width: 100%;
+	padding: 0 0 10rem 0;
+	background-color: #29bde0 !important;
 }
 .main-top{
 	display: inline-block;
 	line-height: 4rem;
 	width: 100%;
 	height: 4rem;
+	font-size: 1.2rem;
 	padding: 0 30% 0 2%;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -44,36 +46,91 @@ main{
 	border-style: solid;
 	margin-top: -8px;
 	margin-left: 3rem; 
-}
-.avatar{
-	position: fixed;
-	top: 8rem;
-	width: 100%;
-	min-height: 100%;
-	background-color: #29bde0;
 
 }
-.avatar div{
-	float: left;
-	display: inline-block;
-	line-height: 8rem;
-	text-align: center;
-	width: 10rem;
-	height: 10rem;
-	font-size: 2rem;
-	margin: 2rem 2rem 0 2rem;
+.description{
+	line-height: 3rem;
+	width: 100%;
+	height: 3rem;
+	font-size: 1rem;
+	padding-left: 3rem;
+	color: #FFF;
+	background-color: #29bde0;
+}
+.avatar{
+	display: flex;
+	justify-content: center;
+	background-color: #29bde0;
+}
+.avatar button{
+	display: flex;
+	flex-direction: column;
+	width: 7rem;
+	height: 7rem;
+	padding: 0;
+	margin: 1rem 0 3rem;
 	border: solid 2px #FFF;
+	border-radius: 0;
+	white-space: normal;
 	color: #000;
 	background-color: #f5c97b;
 }
+.id{
+	display: inline-block;
+	line-height: 5rem;
+	text-align: center;
+	font-size: 1.5rem;
+	width: 100%;
+	height: 8.6rem;
+}
 .number{
-	float: bottom;
 	display: inline-block;
 	line-height: 1rem;
 	text-align: center;
-	width: 100%;
+	width: 6.6rem;
 	height: 1rem;
 	font-size: 0.8rem;
 	color: #FFF;
 	background-color: #83b09a;
+}
+.option{
+	display: none;
+
+}
+button:hover .option{
+	display: inline-block;
+	line-height: 2rem;
+	position: absolute;
+	bottom: 1rem;
+	width: 6.6rem;
+	height: 1rem;
+	background: url(image/投票/one.png) no-repeat,url(image/投票/two.png) no-repeat
+	           ,url(image/投票/three.png) no-repeat,url(image/投票/fire.png) no-repeat;
+	background-size: 1rem 1rem,1rem 1rem,1rem 1rem,1rem 1rem;
+	background-position: 0 0, 1.86rem 0, 3.72rem 0, 5.58rem 0;
+
+}
+footer{
+	display: inline-block;
+	line-height: 10rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 10rem;
+	padding:0 4rem;
+	border-top: solid #FFF 1px;
+	background-color: #29bde0;
+}
+footer .enter{
+	display: inline-block;
+	text-align: center;	
+	width: 100%;
+	height: 4rem;
+	font-size: 1.5rem;
+	border-radius: 0;
+	border: none;
+	color: #FFF;
+	background-color: #fbb435;
+
 }
