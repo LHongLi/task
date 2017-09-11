@@ -34,13 +34,13 @@ ul li{
 }
 .header{
 	position: relative;
-	top: 35% !important;
+	top: 30% !important;
 	left: 3% !important;
 	float: left;
-	width: 3rem;
-	height: 3rem;
+	width: 2rem;
+	height: 2rem;
 	color: #FFF;
-	background-position: -79.73px 0;
+	font-size: 2rem;
 }
 a:hover , a:focus{
     text-decoration: none!important; 
