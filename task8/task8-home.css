@@ -1,0 +1,82 @@
+html body{
+	font-size:62.5%;
+}
+li{
+	list-style: none;
+}
+div.item img{
+	width:100%;
+}
+div#carousel-example-generic{
+	width:80%;
+    margin:0 auto;
+}
+.top{
+	font-size: 1.2rem;
+	height: 3rem;
+	margin: 0 20%;
+	line-height: 3rem;
+	color: #29b078;
+}
+header div span{
+	float: right;
+	margin: .2rem;
+	height: 24px;
+	width: 25px;
+	background: url(image/home/img.png) no-repeat;
+}
+a{
+	text-decoration:none !important;
+}
+.wexin{
+	background-position:-50px 0;
+}
+.qq{
+	background-position:-25px 0;
+}
+.sina{
+	background-position:0 0;
+}
+.option{
+	height: 4rem;
+	color: #FFF;
+	background-color: #29b078;
+}
+.option-all{
+	padding-right: 20%;
+	border: none !important;
+	float: right ;
+}
+.jump{
+	height: 4rem;
+	padding: 1rem 1.5rem;
+	background-color: #29b078;
+}
+button.jump{
+	border: none;
+}
+
+.jump a{
+	position: relative;
+	color: #FFF !important;
+	text-decoration:none;
+}
+button:hover{
+	border-top: .3rem solid transparent;
+	border-bottom: .3rem solid #FFF;
+}
+div#carousel-example-generic{
+	width: 100%;
+	margin: 0;
+}
+.main-two{
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+
+.main-two{background:url(../images/main-two.png)  no-repeat;}
+.技能树首页_25{height:13px;width:13px;background-position:-156px 0;}
+.技能树首页_13{height:62px;width:43px;background-position:0 0;}
+.技能树首页_16{height:55px;width:52px;background-position:-44px 0;}
+.技能树首页_19{height:48px;width:60px;background-position:-96px 0;}
