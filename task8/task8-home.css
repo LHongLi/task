@@ -2,9 +2,6 @@ html body{
 	font-size:62.5%;
 	background-color: #fafafa;
 }
-li{
-	list-style: none;
-}
 div.item img{
 	width:100%;
 }
@@ -15,7 +12,7 @@ div#carousel-example-generic{
 .top{
 	font-size: 1.2rem;
 	height: 3rem;
-	margin: 0 20%;
+	padding: 0 15%;
 	line-height: 3rem;
 	color: #29b078;
 }
@@ -23,19 +20,22 @@ header div span{
 	float: right;
 	margin: .2rem;
 	height: 24px;
-	width: 25px;
+	width: 25px;		
 	background: url(image/home/img.png) no-repeat;
 }
-a{
-	text-decoration:none !important;
+header a:hover{
+	text-decoration:none;
 }
 .wexin{
+	margin-top: .6rem;
 	background-position:-50px 0;
 }
 .qq{
+	margin-top: .6rem;
 	background-position:-25px 0;
 }
 .sina{
+	margin-top: .6rem;
 	background-position:0 0;
 }
 .option{
@@ -44,7 +44,7 @@ a{
 	background-color: #29b078;
 }
 .option-all{
-	padding-right: 18.6%;
+	padding: 0 14%;
 	border: none !important;
 	float: right ;
 }
@@ -71,7 +71,9 @@ div#carousel-example-generic{
 	margin: 0;
 }
 .features{
-	margin: 5rem 20%;
+	display: flex;
+	justify-content: space-between;
+	padding: 5rem 0;
 }
 .topic{
 	line-height: 4rem;
@@ -115,8 +117,10 @@ div#carousel-example-generic{
 	color: #29b078;
 }
 .main-two-end{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	font-size: 1.5rem;
-	padding: 3rem 0;
 	border-left: 1px dashed #a9a9a9;
 }
 .main-two-end img{
@@ -139,9 +143,8 @@ div#carousel-example-generic{
 }
 .how{
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding: 0 !important; 	
+	justify-content: space-around;
+	align-items: center; 	
 	margin-bottom: 5rem;	
 }
 .how-1{
@@ -160,8 +163,12 @@ div#carousel-example-generic{
 	display: inline-block;
 	width: 50%;
 	font-size: .8rem;
-	margin: 0 1.5rem 0 1rem;
-	color: #a9a9a9;
+	font-weight: bold;
+	color: #999;
+}
+.row-1{
+	display: flex;
+	justify-content: space-around;
 }
 .student-show {
 	font-size: 2.5rem;
@@ -180,6 +187,17 @@ div#carousel-example-generic{
 	border: 1px solid #f5f5f5;
 	background-color: #FFF;
 }
+.student-right{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 20%!important;
+	padding: 2rem 2rem;
+	padding-bottom: 0;
+	border: 1px solid #f5f5f5;
+	background-color: #FFF;
+}
+
 .student b{
 	font-size: 2rem;
 	margin: 3rem 0;
@@ -187,5 +205,158 @@ div#carousel-example-generic{
 .student p{
 	font-size: 1.7rem;
 	color: #a9a9a9;
+}
+.student-right b{
+	font-size: 2rem;
+	margin: 3rem 0;
+}
+.student-right p{
+	font-size: 1.7rem;
+	color: #a9a9a9;
+}
+.title{
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 3rem 0;
+}
+.row-link{
+	width: 100%;
+	height: 12.1rem;
+	margin: 0 !important;
+}
+.row .spel{
+	width: 20%;
+	height: 12rem;
+}
+.spel-all{
+	border: 1px solid #e2e2e2;
+	background-color: #FFF;
+}
+.spel:hover{
+	box-shadow: 1px 1px 5px #000;
+	position: relative;
+}
+.al{
+	display: inline-block;
+	width: 100%;
+	margin-right: 3px;
+	height: 12rem;
+	background: url(image/home/al.jpg)  no-repeat  50% 50%;
+}
+.js{
+	display: inline-block;
+	width: 100%;
+	margin:0 3px;
+	height: 12rem;
+	background: url(image/home/js.jpg)  no-repeat  50% 50%;
+}
+.hx{
+	display: inline-block;
+	width: 100%;
+	margin: 0 3px;
+	height: 12rem;
+	background: url(image/home/hx.jpg)  no-repeat  50% 50%;
+}
+.rl{
+	display: inline-block;
+	width: 100%;
+	margin: 0 3px;
+	height: 12rem;
+	background: url(image/home/rl.jpg)  no-repeat  50% 50%;
+}
+.qn{
+	display: inline-block;
+	width: 100%;
+	height: 12rem;
+	background: url(image/home/qn.jpg)  no-repeat  50% 50%;
+}
+#link{
+
+}
+.link-title{
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 3rem 0 ;
+}
+.link, .link-2{
+	display: flex;
+	justify-content: space-between;
+	padding-left: 1rem;
+	color: #999;
+}
+.link a, .link-2 a{
+	color: #999;
+	padding-bottom: .5rem;
+}
+
+.link a:hover, .link-2 a:hover{
+	color: #999;
+	text-decoration: none;
+	border-bottom: 1px solid #29b078;
+}
+
+
+footer{
+	display: table;
+	height: 11rem;
+	padding: 0 15%;
+	color: #FFF;
+	background: #29b078;
+}
+.jnshu{
+	float: left;
+	position: relative;
+	top: .5rem;
+	width: 25%;
+}
+.jnshu-content{
+	position: relative;
+	top: 4rem;
+
+}
+.qxwz{
+	float: left;
+	position: relative;
+	top: .5rem;
+	width: 25%;
+	margin-left: 6rem;
+}
+.qxwz-content{
+	position: relative;
+	top: 1.5rem;
+}
+#qxwz-border{
+	padding-top: 1rem;
+}
+.WX{
+	float: right;	
+	position: relative;
+	top: 1.5rem;
+	right: 0;
+	text-align: right;
+	width: 33.33333%;
+	font-size: 1.5rem;
+}
+.WX p{
+	margin-bottom: .5rem;
+}
+.last{
+	display: flex;
+	justify-content: center;
+	border-top: .1rem solid #32c086;
+	color: #FFF;
+	background-color: #29b078;
+}
+footer a{
+	margin-bottom: .5rem;
+	padding-bottom: .5rem;
+	color: #FFF;	
+}
+footer a:focus ,footer a:hover{
+	color: #FFF ;
+	text-decoration: none;
+	border-bottom: 1px solid #FFF
 }
 
