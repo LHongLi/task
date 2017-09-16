@@ -13,6 +13,8 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	font-size: 1rem;
+	padding-left: 15%;
+	padding-right: 15%;
 	border-bottom: 1px solid #eaeaea;
 	color: #29b078;
 	background: #fff;
@@ -44,6 +46,8 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	height: 7rem;
+	padding-left: 15%;
+	padding-right: 15%;
 	background: #29b078;
 }
 .center-right a{
@@ -67,16 +71,26 @@ header{
 	align-items: center;
 	font-weight: bold;
 	font-size: 1.65rem;
+	margin: 0 15%;
 	height: 5rem;
 	border-bottom: 1px solid #d0d6d9;
 }
-.header-end p{
+.header-end a,.header-end p{
 	margin: 0;
+}
+.header-end a{
+	color: #000;
+}
+.header-end a:hover, .header-end a:focus{
+	color: #000;
 }
 .end-right{
 	color: #29b078;
 }
 /*main*/
+main{
+	padding: 0 15% 3rem 15%;
+}
 /*main-top*/
 .main-top{
 	display: flex;
@@ -107,9 +121,9 @@ header{
 }
 /*list-title*/
 .form-title{
-	height: 7rem;
-	line-height: 7rem;
-	font-size: 2.5rem;
+	height: 6rem;
+	line-height: 6rem;
+	font-size: 2rem;
 	font-weight: bold;
 	border-bottom: #d0d6d9 1px solid;
 }
@@ -149,7 +163,7 @@ header{
 	display: flex;
 	justify-content: flex-start;
 	padding: 1rem .5rem;
-	font-size: .7rem;
+	font-size: .8rem;
 }
 .header img{
 	margin-right: .5rem;
@@ -279,6 +293,7 @@ header{
 	top: 0;
 	width: 100%;
 	height: 100%;
+	padding: 0 1rem;
 	font-size: 1rem;
 	opacity: 0;
 	color: #fff;
@@ -296,8 +311,19 @@ header{
 	display: flex;
 	text-indent: 2rem;
 }
+/*none*/
+.none{
+	display: flex;
+	flex: 1;
+}
+.none-margin{
+	display: flex;
+	flex: 1;
+	margin-right:2rem;
+}
 /*footer*/
 footer{
+	padding: 0 15%;
 	color: #fff;
 	background: #29b078;
 }
