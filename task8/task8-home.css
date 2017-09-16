@@ -9,6 +9,7 @@ div#carousel-example-generic{
 	width:80%;
     margin:0 auto;
 }
+/*header-top*/
 .top{
 	font-size: 1.2rem;
 	height: 3rem;
@@ -20,7 +21,7 @@ header div span{
 	float: right;
 	margin: .2rem;
 	height: 24px;
-	width: 25px;		
+	width: 25px;
 	background: url(image/home/img.png) no-repeat;
 }
 header a:hover{
@@ -38,34 +39,31 @@ header a:hover{
 	margin-top: .6rem;
 	background-position:0 0;
 }
-.option{
-	height: 4rem;
-	color: #FFF;
-	background-color: #29b078;
+/*header-center*/
+.header-center{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.5rem;
+	height: 6rem;
+	padding-left: 15%;
+	padding-right: 15%;
+	background: #29b078;
 }
-.option-all{
-	padding: 0 14%;
-	border: none !important;
-	float: right ;
+.center-right a{
+	font-weight: bold;
+	padding: 2.2rem 2rem;
+ 	color: #fff;
 }
-.jump{
-	height: 4rem;
-	padding: 1rem 1.5rem;
-	background-color: #29b078;
+.center-right a:hover,.center-right a:focus{
+	text-decoration: none;
+	color: #fff;
 }
-button.jump{
-	border: none;
+.center-right a:hover{
+	border-top: .3rem solid transparent;
+	border-bottom:.3rem solid #fff;
 }
 
-.jump a{
-	position: relative;
-	color: #FFF !important;
-	text-decoration:none;
-}
-button:hover{
-	border-top: .3rem solid transparent;
-	border-bottom: .3rem solid #FFF;
-}
 div#carousel-example-generic{
 	width: 100%;
 	margin: 0;
@@ -127,7 +125,7 @@ div#carousel-example-generic{
 	margin-right: 1rem;
 }
 .tip{
-	padding: 0 2rem; 
+	padding: 0 2rem;
 	color: #a9a9a9;
 }
 .tip-end{
@@ -144,8 +142,8 @@ div#carousel-example-generic{
 .how{
 	display: flex;
 	justify-content: space-around;
-	align-items: center; 	
-	margin-bottom: 5rem;	
+	align-items: center;
+	margin-bottom: 5rem;
 }
 .how-1{
 	display: flex;
@@ -298,65 +296,57 @@ div#carousel-example-generic{
 }
 
 
+/*footer*/
 footer{
-	display: table;
-	height: 11rem;
 	padding: 0 15%;
-	color: #FFF;
+	color: #fff;
 	background: #29b078;
 }
-.jnshu{
-	float: left;
-	position: relative;
-	top: .5rem;
-	width: 25%;
-}
-.jnshu-content{
-	position: relative;
-	top: 4rem;
-
-}
-.qxwz{
-	float: left;
-	position: relative;
-	top: .5rem;
-	width: 25%;
-	margin-left: 6rem;
-}
-.qxwz-content{
-	position: relative;
-	top: 1.5rem;
-}
-#qxwz-border{
-	padding-top: 1rem;
-}
-.WX{
-	float: right;	
-	position: relative;
-	top: 1.5rem;
-	right: 0;
-	text-align: right;
-	width: 33.33333%;
-	font-size: 1.5rem;
-}
-.WX p{
-	margin-bottom: .5rem;
-}
-.last{
-	display: flex;
-	justify-content: center;
-	border-top: .1rem solid #32c086;
-	color: #FFF;
-	background-color: #29b078;
-}
 footer a{
-	margin-bottom: .5rem;
-	padding-bottom: .5rem;
-	color: #FFF;	
+	padding: .5rem 0;
+	color: #fff;
 }
-footer a:focus ,footer a:hover{
-	color: #FFF ;
+footer a:hover, footer a:focus{
+	color: #FFF;
 	text-decoration: none;
-	border-bottom: 1px solid #FFF
 }
+footer a:hover{
+	border-bottom: .15rem solid #fff;
+}
+.footer-top{
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.5rem;
+	height: 15rem;
+	padding: 3rem 0;
+	border-bottom: .1rem solid #32c086;
+}
+.footer-top-left{
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+}
+.footer-top-left-1{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.footer-top-left-2{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.footer-top-right{
 
+	text-align: top;
+	background: url(image/three/code.png) no-repeat 50% 100%;
+}
+.footer-end{
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 1.5rem;
+	border-top: 1px solid #32c086;
+	color: #fff;
+	background: #29b078;
+}

@@ -1,5 +1,6 @@
 html, body{
 	font-size: 62.5%;
+	margin: 0;
 	background: #fafafa;
 }
 /*header-top*/
@@ -33,7 +34,6 @@ html, body{
 .sina{
 	width: 2.5rem;
 	height: 2.4rem;
-	margin-right: 1.5rem;
 	background: url(image/sce/sina.png) no-repeat 50% 50%;
 }
 /*header-two*/
@@ -67,51 +67,7 @@ html, body{
 	text-decoration: none;
 	color: #FFF;
 }
-.option-2{
-	line-height: 6rem;
-	padding: 2.2rem 2rem;
-	color: #FFF;
-}
-.option-2:hover{
-	border-bottom: .2rem solid #FFF;
-	border-top: .2rem solid transparent;
-	text-decoration: none;
-	color: #FFF;
-}
-.option-2:focus{
-	text-decoration: none;
-	color: #FFF;
-}
-.option-3{
-	line-height: 6rem;
-	padding: 2.2rem 2rem;
-	color: #FFF;
-}
-.option-3:hover{
-	border-bottom: .2rem solid #FFF;
-	border-top: .2rem solid transparent;
-	text-decoration: none;
-	color: #FFF;
-}
-.option-3:focus{
-	text-decoration: none;
-	color: #FFF;
-}
-.option-4{
-	line-height: 6rem;
-	padding: 2.2rem 2rem;
-	color: #FFF;
-}
-.option-4:hover{
-	border-bottom: .2rem solid #FFF;
-	border-top: .2rem solid transparent;
-	text-decoration: none;
-	color: #FFF;
-}
-.option-4:focus{
-	text-decoration: none;
-	color: #FFF;
-}
+
 /*header-end*/
 .header-end{
 	height: 17.5rem;
@@ -126,7 +82,9 @@ main{
 .main-top{
 	display: flex;
 	justify-content: flex-start;
-	padding: 2rem 0;
+	font-size: 1.5rem;
+	height: 5rem;
+	line-height: 5rem;
 	font-weight: bold;
 	background: #fafafa;
 }
@@ -222,74 +180,52 @@ main{
 }
 /*footer*/
 footer{
-	display: table;
-	height: 11rem;
 	padding: 0 15%;
-	color: #FFF;
+	color: #fff;
 	background: #29b078;
 }
-.jnshu{
-	float: left;
-	position: relative;
-	top: .5rem;
-	width: 25%;
-}
-.jnshu-content{
-	position: relative;
-	top: 4rem;
-
-}
-.qxwz{
-	float: left;
-	position: relative;
-	top: .5rem;
-	width: 25%;
-	margin-left: 6rem;
-}
-.qxwz-content{
-	position: relative;
-	top: 1.5rem;
-}
-#qxwz-border{
-	padding-top: 1rem;
-}
-.WX{
-	float: right;
-	position: relative;
-	top: 1.5rem;
-	right: 0;
-	text-align: right;
-	width: 33.33333%;
-	font-size: 1.5rem;
-}
-.WX p{
-	margin-bottom: .5rem;
-}
-.last{
-	display: flex;
-	justify-content: center;
-	border-top: .1rem solid #32c086;
-	color: #FFF;
-	background-color: #29b078;
-}
-
 footer a{
-	margin-bottom: .5rem;
-	padding-bottom: .5rem;
+	padding: .5rem 0;
+	color: #fff;
+}
+footer a:hover, footer a:focus{
 	color: #FFF;
-}
-footer a:focus ,footer a:hover{
-	color: #FFF ;
 	text-decoration: none;
-	border-bottom: 1px solid #FFF
 }
+footer a:hover{
+	border-bottom: .15rem solid #fff;
+}
+.footer-top{
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.5rem;
+	height: 15rem;
+	padding: 3rem 0;
+	border-bottom: .1rem solid #32c086;
+}
+.footer-top-left{
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+}
+.footer-top-left-1{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.footer-top-left-2{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.footer-top-right{
 
-
-/*end*/
-.end{
-	display: inline-block;
+	text-align: top;
+	background: url(image/three/code.png) no-repeat 50% 100%;
+}
+.footer-end{
+	height: 2rem;
 	line-height: 2rem;
-	width: 100%;
 	text-align: center;
 	font-size: 1.5rem;
 	border-top: 1px solid #32c086;
