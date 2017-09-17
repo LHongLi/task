@@ -198,7 +198,7 @@ div#carousel-example-generic{
 }
 .how p, .how-end p, .how-end-2 p{
 	display: inline-block;
-	width: 70%;
+	width: 65%;
 	margin: 0;
 	font-size: .8rem;
 	font-weight: bold;
@@ -363,8 +363,12 @@ footer{
 	background: #29b078;
 }
 footer a{
+	margin: 0 .5rem;
 	padding: .5rem 0;
 	color: #fff;
+}
+footer h4{
+	padding: .5rem;
 }
 footer a:hover, footer a:focus{
 	color: #FFF;
@@ -380,13 +384,15 @@ footer a:hover{
 .footer-top-left{
 	display: flex;
 	justify-content: space-between;
-	width: 60%;
+	width: 70%;
+	height: auto;
 	padding: 5rem 0;
 }
 .footer-top-left-1{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	height: 10rem;
 }
 .footer-top-left-2{
 	display: flex;
@@ -396,20 +402,21 @@ footer a:hover{
 .footer-top-right{
 	display: flex;
 	justify-content: flex-end;
-	width: 40%;
+	width: 30%;
 	padding: 3rem 0;
 	background: url(image/three/code.png) no-repeat 100% 50%;
 }
 .footer-end{
-	height: 2rem;
-	line-height: 2rem;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
 	font-size: 1.5rem;
 	border-top: 1px solid #32c086;
 	color: #fff;
 	background: #29b078;
 }
-@media screen and (max-width:1024px) and (min-width:560px){
+@media screen and (max-width:1024px) and (min-width:720px){
 	.header-center, .center-right{
 		height: auto;
 	}
@@ -459,7 +466,7 @@ footer a:hover{
 		padding: 0;
 	}
 }
-@media screen and (max-width:559px) and (min-width:320px){
+@media screen and (max-width: 719px) and (min-width:320px){
 	.top p, .top-right{
 		margin: .5rem 0;
 		text-align: center;
@@ -514,6 +521,11 @@ footer a:hover{
 		justify-content: center;
 	}
 	.footer-top-right{
+		height: 12rem;
+		padding: 0;
 		background: url(image/three/code.png) no-repeat 50% 50%;
+	}
+	.footer-end{
+		text-align: center;
 	}
 }
