@@ -10,12 +10,11 @@ html, body{
 	align-items: center;
 	padding: 0 15%;
 	height: auto;
-	width: 100%;
+	color: #29b078;
 	background: #fff;
 }
 .top p{
 	margin: 0;
-	color: #29b078;
 }
 .top-logo{
 	display: flex;
@@ -49,14 +48,14 @@ html, body{
 .option{
 	display: flex;
 	justify-content: flex-end;
-	width: 100%;
+	width: 80%;
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: #FFF;
 }
 .option-1{
 	text-align: center;
-	line-height: 5.8rem;
+	line-height: 6rem;
 	width: 10%;
 	color: #FFF;
 	border-top: .2rem solid transparent;
@@ -74,7 +73,8 @@ html, body{
 	height: 17.5rem;
 	background: url(image/sce/header.png) no-repeat 50% 50%;
 	background-size: 100% 100%;
-}@media screen and (max-width:1024px) and (min-width:720px){
+}
+@media screen and (max-width:1024px) and (min-width:720px){
 	.header-two{
 		flex-wrap: wrap;
 		justify-content: center;
@@ -82,9 +82,12 @@ html, body{
 	}
 	.option{
 		flex-wrap: wrap;
+		width: 100%;
 	}
 	.option-1{
 		width: 50%;
+		height: 4rem;
+		line-height: 4rem;
 	}
 }
 @media screen and (max-width: 719px) and (min-width:320px){
@@ -105,9 +108,12 @@ html, body{
 	}
 	.option{
 		flex-wrap: wrap;
+		width: 100%;
 	}
 	.option-1{
 		width: 100%;
+		height: 4rem;
+		line-height: 4rem;
 	}
 }
 /*main*/
@@ -323,6 +329,10 @@ footer a:hover{
 	}
 	.footer-top-left, .footer-top-right{
 		width: 100%;
+	}
+	.footer-top-right{
+		height: 11rem;
+		padding: 0;
 	}
 }
 @media screen and (max-width:719px) and (min-width:320px){
