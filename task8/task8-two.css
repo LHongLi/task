@@ -9,7 +9,7 @@ html, body{
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 15%;
-	height: 3rem;
+	height: auto;
 	width: 100%;
 	background: #fff;
 }
@@ -42,38 +42,75 @@ html, body{
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 15%;
-	height: 6rem;
+	height: auto;
 	background-color: #29b078;
 }
 
 .option{
-	height: 6rem;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: #FFF;
 }
 .option-1{
-	line-height: 6rem;
-	padding: 2.2rem 2rem;
+	text-align: center;
+	line-height: 5.8rem;
+	width: 10%;
 	color: #FFF;
-}
-.option-1:hover{
-	border-bottom: .2rem solid #FFF;
 	border-top: .2rem solid transparent;
+	border-bottom: .2rem solid transparent;
+}
+.option-1:hover, .option-1:focus{
+	border-bottom: .2rem solid #FFF;
 	text-decoration: none;
 	color: #FFF;
 }
-.option-1:focus{
-	text-decoration: none;
-	color: #FFF;
-}
+
 
 /*header-end*/
 .header-end{
 	height: 17.5rem;
 	background: url(image/sce/header.png) no-repeat 50% 50%;
 	background-size: 100% 100%;
+}@media screen and (max-width:1024px) and (min-width:720px){
+	.header-two{
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 1rem;
+	}
+	.option{
+		flex-wrap: wrap;
+	}
+	.option-1{
+		width: 50%;
+	}
 }
+@media screen and (max-width: 719px) and (min-width:320px){
+	.top{
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.top p, .top-logo{
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+		margin: .5rem 0;
+	}
+	.header-two{
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 1rem;
+	}
+	.option{
+		flex-wrap: wrap;
+	}
+	.option-1{
+		width: 100%;
+	}
+}
+/*main*/
 main{
 	padding:0 15%;
 	background: #fafafa;
@@ -113,7 +150,6 @@ main{
 }
 .main-left p{
 	margin: 0;
-	height: 5rem;
 	line-height: 5rem;
 	font-size: 2rem;
 	font-weight: bold;
@@ -127,33 +163,26 @@ main{
 	margin: 0;
 	padding: 0;
 }
-.main-left-1{
-	height: 4rem;
-	padding: 0;
-	line-height: 4rem;
-}
-.main-left-1 a{
-	position: relative;
-	left: 40%;
-	text-align: left;
+
+.main-left-link a{
+	text-align: center;
+	text-indent: 1rem;
 	font-size: 1.5rem;
 	font-weight: bold;
-	padding-left: 1.5rem;
+	line-height: 4rem;
 	color: #29b078;
-	background: url(image/sce/no.png) no-repeat 0% 50%;
+	background: url(image/sce/no.png) no-repeat 35% 50%;
 }
-.main-left-1 a:focus{
+.main-left-link a:focus{
 	text-decoration: none;
 	color: #29b078;
 }
 
-.main-left-1 a:hover {
-	padding-left: 1.5rem;
+.main-left-link a:hover {
 	text-decoration: none;
 	color: #ff650e;
-	background: url(image/sce/yes.png) no-repeat 0% 50%;
+	background: url(image/sce/yes.png) no-repeat 35% 50%;
 }
-
 /*main-right*/
 .right-fix{
 	flex: 1;
@@ -163,11 +192,18 @@ main{
 	background-color: #fff;
 }
 .main-right-top{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 	font-size: 1.7rem;
-	padding: 2rem 3rem 2rem 30%;
+	padding: 2rem;
 	color: #999;
 	border-bottom: 1px solid #eaeaea;
-	background: url(image/sce/tudou.png) 10% 50% no-repeat;
+}
+.tudou-logo{
+	width: 40%;
+	height: auto;
+	margin-right: 2rem;
 }
 .main-right-other{
 	padding: 2rem 3rem;
@@ -177,6 +213,17 @@ main{
 .main-right-other p{
 	text-indent: 2.5rem;
 	margin-bottom: 2rem;
+}
+@media screen and (max-width:1024px) and (min-width:720px){
+	.main-left{
+		width: 100%;
+	}
+	.main-left p, .main-left-link{
+		line-height: 3rem;
+	}
+}
+@media screen and (max-width:719px) and (min-width:320px){
+
 }
 /*footer*/
 footer{
