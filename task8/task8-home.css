@@ -85,6 +85,7 @@ div#carousel-example-generic{
 	width: 100%;
 	margin: 0;
 }
+
 .features{
 	display: flex;
 	justify-content: space-between;
@@ -376,7 +377,7 @@ footer a:hover{
 .footer-top-left{
 	display: flex;
 	justify-content: space-between;
-	width: 65%;
+	width: 50%;
 	height: auto;
 	padding: 5rem 0;
 }
@@ -394,7 +395,7 @@ footer a:hover{
 .footer-top-right{
 	display: flex;
 	justify-content: flex-end;
-	width: 35%;
+	width: 50%;
 	padding: 3rem 0;
 	background: url(image/three/code.png) no-repeat 100% 50%;
 }
@@ -411,6 +412,9 @@ footer a:hover{
 @media screen and (max-width:1024px) and (min-width:720px){
 	.header-center, .center-right{
 		height: auto;
+	}
+	.header-center{
+		justify-content: center;
 	}
 	.center-right a{
 		width: 50%;
@@ -447,6 +451,10 @@ footer a:hover{
 	.link li, .link-2 li{
 		width: 20%;
 	}
+	.link li a, .link-2 li a{
+		width: 5.7rem;
+		text-align: left;
+	}
 	.center-right, .row-1, .link, .link-2,.footer-top{
 		flex-wrap: wrap;
 	}
@@ -471,6 +479,9 @@ footer a:hover{
 	}
 	.header-center, .center-right{
 		height: auto;
+	}
+	.header-center{
+		justify-content: center;
 	}
 	.center-right a{
 		width: 100%;
