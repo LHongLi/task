@@ -236,7 +236,7 @@ header{
 }
 .footer-end p{
 	font-weight: bold;
-	margin-right: 1rem;
+	margin-right: 1	rem;
 }
 @media screen and (max-width:1024px) and (min-width:720px){
 	.footer-top{
