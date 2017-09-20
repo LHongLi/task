@@ -328,6 +328,7 @@ label{
 	flex-wrap: wrap;
 	position: relative;
 	padding: 2rem 1rem 2rem 3rem;
+	background-color: #fbfcff;
 }
 .con2-main-top, .con2-main-bottom{
 	display: flex;
@@ -406,6 +407,7 @@ input[type="text"]{
 	position: relative;
 	height: 5rem;
 	padding: 0 7rem 0 3rem;
+	background-color: #fbfcff;
 }
 .icon3-radio{
 	position: absolute;
@@ -439,6 +441,27 @@ input[type="text"]{
 		width: 100%;
 		margin: .5rem 0;
 	}
+}
+/*main-end*/
+.end{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 20rem;
+	margin-bottom: 4rem;
+	border: .1rem solid #e8e8e8;
+}
+.end a{
+	width: 15%;
+	height: 3rem;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	line-height: 3rem;
+	text-decoration: none;
+	border-radius: .3rem;
+	color: #fff;
+	background-color: #e15053;
 }
 
 
