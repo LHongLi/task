@@ -170,6 +170,17 @@ header{
 	font-weight: bold;
 	color: #ccc;
 }
+.pro2 .pro-bar:hover, .pro3 .pro-bar:hover, .pro4 .pro-bar:hover {
+	color: #fff;
+	background-color: #ff7f02;
+}
+.pro2 .pro-bar:hover+p, .pro3 .pro-bar:hover+p, .pro4 .pro-bar:hover+p {
+	color: #ff7f02;
+}
+.pro2 .pro-bar:hover>.round, .pro3 .pro-bar:hover>.round, .pro4 .pro-bar:hover>.round{
+	color: #fff;
+	background-color: #ff7f02;
+}
 .pro1 p{
 	color: #ff7f02;
 }
@@ -452,7 +463,7 @@ input[type="text"]{
 	border: .1rem solid #e8e8e8;
 }
 .end a{
-	width: 15%;
+	width: 6rem;
 	height: 3rem;
 	font-size: 2rem;
 	font-weight: bold;
@@ -463,92 +474,6 @@ input[type="text"]{
 	color: #fff;
 	background-color: #e15053;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*footer*/
 .footer-top{
