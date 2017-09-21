@@ -1,0 +1,33 @@
+//out:task11.css,sourcemap: true, compress: true
+//main:task11.less
+@back1: #5fc0cd;
+@back2: #eff0f4;
+@text: #fff;
+.flex{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.padding{
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+html, body{
+	font-size: 62.5%;
+	margin: 0;
+	background-color: @back2;
+}
+header{
+	.flex;
+	.padding;
+	height: 3rem;
+	background-color: @back1;
+}
+.header1, .header3{
+	font-size: 1.5rem;
+}
+.header2{
+	font-size: 1.8rem;
+}
