@@ -1,18 +1,32 @@
-//out:task11.css,sourcemap: true, compress: true
+//out:task11.css
 //main:task11.less
 @back1: #5fc0cd;
 @back2: #eff0f4;
 @text: #fff;
+@input: #eaeeed;
+@font-z: 2rem;
 .flex{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+.flexend{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.width{
+	width:100%;
+}
 .padding{
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0;
-	padding-bottom: 0;
+	padding: 1rem;
+}
+.margin{
+	margin-top: 1rem;
+}
+.borno{
+	border: none;
 }
 html, body{
 	font-size: 62.5%;
@@ -25,9 +39,51 @@ header{
 	height: 3rem;
 	background-color: @back1;
 }
+a{
+	color: @text;
+	text-decoration: none;
+}
 .header1, .header3{
 	font-size: 1.5rem;
 }
 .header2{
 	font-size: 1.8rem;
+}
+.phone, .sky{
+	.flex;
+	.margin;
+	justify-content: flex-start;
+	height: auto;
+	color: @back2;
+	background: @text;
+}
+
+img{
+	.padding;
+}
+input[type="text"]{
+	.padding;
+	font-size: @font-z;
+	height: 2rem;
+	.width;
+	.borno;
+	border-left: .1rem solid @input;
+}
+footer{
+	.flexend;
+}
+.footer{
+	.width;
+	height: 5rem;
+	margin-top: 3rem;
+	font-size: @font-z;
+	color: @text;
+	background: @back1;
+	.borno;
+}
+.forget{
+	.margin; 
+	font-size: @font-z;
+	color: @back1;
+
 }
