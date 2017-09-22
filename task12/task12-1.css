@@ -1,0 +1,184 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+.width {
+  width: 100%;
+}
+.pos-abs {
+  position: absolute;
+}
+.pos-re {
+  position: relative;
+}
+.pos-fx {
+  position: fixed;
+}
+.mar {
+  margin: 0;
+}
+.bor-other {
+  border-bottom: 0.1rem solid #a9a9a9;
+}
+.bor-main {
+  border-right: 0.1rem solid #a9a9a9;
+}
+html,
+body {
+  font-size: 62.5%;
+  margin: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #5fc0cd;
+}
+header p {
+  line-height: 4rem;
+  margin: 0;
+}
+header a {
+  position: absolute;
+  top: 20%;
+  width: 1.5rem;
+  height: 2.4rem;
+  left: 2rem;
+  background: url(image/task12-1/back.png) no-repeat 50% 50%;
+  background-size: 1.5rem 2.4rem;
+}
+main {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+/*main-top*/
+.main-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  height: 16.35rem;
+  padding-top: 4.5rem;
+  background: url(image/task12-1/背景.png) no-repeat 50% 50%;
+  background-size: cover;
+}
+.avatar {
+  width: 7rem;
+  height: 7rem;
+  background: url(image/task12-1/头像.png) no-repeat 50% 50%;
+  background-size: 7rem;
+}
+.name,
+.add {
+  margin: 0;
+  margin-left: 1rem;
+  color: #fff;
+}
+.name {
+  font-size: 1.5rem;
+  margin-top: .5rem;
+}
+.add {
+  margin-top: .5rem;
+  padding-left: 1rem;
+  background: url(image/task12-1/定位箭头.png) no-repeat 0 50%;
+  background-size: .78rem 1rem;
+}
+.main-center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  height: 5rem;
+  border-bottom: 0.1rem solid #a9a9a9;
+}
+.main-center p {
+  width: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1.5rem;
+  padding-left: .5rem;
+  border-left: 0.2rem solid #5fc0cd;
+}
+.other {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 1rem;
+}
+.top,
+.year,
+.time,
+.money,
+.me {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1rem solid #a9a9a9;
+  width: 100%;
+  height: 5rem;
+}
+.top p {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding-left: 1.5rem;
+  margin: 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: url(image/task12-1/星字符.png) no-repeat 0% 47%;
+  background-size: 1.4rem 1.3rem;
+}
+.left {
+  text-align: center;
+  border-right: 0.1rem solid #a9a9a9;
+  margin: 0;
+  padding-right: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: #a9a9a9;
+}
+.me-right {
+  width: 70%;
+}
+.red {
+  color: red;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 98%;
+  padding: 1%;
+  background: #fff;
+}
+.mess {
+  width: 49.5%;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #5fc0cd;
+  border: 0.1rem solid #5fc0cd;
+  border-radius: .5rem;
+  background: #fff;
+}
+.call {
+  width: 49.5%;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: #fff;
+  border: 0.1rem solid #5fc0cd;
+  border-radius: .5rem;
+  background: #5fc0cd;
+}

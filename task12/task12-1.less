@@ -1,0 +1,183 @@
+//out:task12-1.css
+//main:ture
+@headerback: #5fc0cd;
+@text1: #fff;
+@text2: #a9a9a9;
+@bor-bottom: #a9a9a9;
+@main-height: 5rem;
+.flex{
+	display: flex;
+	align-items: center;
+}
+.width{
+	width: 100%;
+}
+.pos-abs{
+	position: absolute;
+}
+.pos-re{
+	position: relative;
+}
+.pos-fx{
+	position: fixed;
+}
+.mar{
+	margin: 0;
+}
+.bor-other{
+	border-bottom: .1rem solid @bor-bottom;
+}
+.bor-main{
+	border-right: .1rem solid @text2;
+}
+html, body{
+	font-size: 62.5%;
+	margin: 0;
+}
+header{
+	.flex;
+	justify-content: center;
+	.width;
+	height: 4.5rem;
+	.pos-fx;
+	top: 0;
+	left: 0;
+	font-size: 2rem;
+	color:@text1;
+	background-color: @headerback;
+}
+header p{
+	line-height: 4rem;
+	margin: 0;
+}
+header a{
+	.pos-abs;
+	top: 20%;
+	left: 2rem;
+	width: 1.5rem;
+	height: 2.4rem;
+	left: 2rem;
+	background: url(image/task12-1/back.png)
+	no-repeat 50% 50%;
+	background-size: 1.5rem 2.4rem;
+}
+main{
+	.width;
+	padding-bottom: 4rem;
+}
+/*main-top*/
+.main-top{
+	.flex;
+	justify-content: flex-start;
+	padding-left: 2rem;
+	height: 16.35rem;
+	padding-top: 4.5rem;
+	background: url(image/task12-1/背景.png)
+	 no-repeat 50% 50%;
+	background-size: cover;
+}
+.avatar{
+	width: 7rem;
+	height: 7rem;
+	background: url(image/task12-1/头像.png) no-repeat 50% 50%;
+	background-size:  7rem;
+}
+.name, .add{
+	.mar;
+	margin-left: 1rem;
+	color: @text1;
+}
+.name{
+	font-size: 1.5rem;
+	margin-top: .5rem;
+}
+.add{
+	margin-top: .5rem;
+	padding-left: 1rem;
+	background: url(image/task12-1/定位箭头.png) no-repeat 0 50%;
+	background-size: .78rem 1rem;
+}
+.main-center{
+	.flex;
+	.width;
+	.mar;
+	height: 5rem;
+	border-bottom: .1rem solid @bor-bottom;
+}
+.main-center p{
+	.width;
+	.mar;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-left: 1.5rem;
+	padding-left: .5rem;
+	border-left: .2rem solid @headerback;
+}
+.other{
+	.flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 0 1rem;
+}
+.top, .year, .time, .money, .me{
+	.flex;
+	.bor-other;
+	.width;
+	height: @main-height;
+}
+.top p{
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding-left: 1.5rem;
+	margin: 0 1rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: url(image/task12-1/星字符.png)
+	no-repeat 0% 47%;
+	background-size: 1.4rem 1.3rem;
+}
+.left{
+	text-align: center;
+	.bor-main;
+	.mar;
+	padding-right: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	color: @text2;
+}
+.me-right{
+	width: 70%;
+}
+.red{
+	color: red;
+}
+footer{
+	.flex;
+	justify-content: space-between;
+	.pos-fx;
+	bottom: 0;
+	left: 0;
+	width: 98%;
+	padding: 1%;
+	background: @text1;
+}
+.mess{
+	width: 49.5%;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1.5rem;
+	text-align: center;
+	color: @headerback;
+	border: .1rem solid @headerback;
+	border-radius: .5rem;
+	background: @text1;
+}
+.call{
+	width: 49.5%;
+	height: 3rem;
+	font-size: 1.5rem;
+	color: @text1;
+	border: .1rem solid @headerback;
+	border-radius: .5rem;
+	background: @headerback;
+}
