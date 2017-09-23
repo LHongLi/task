@@ -1,0 +1,53 @@
+//out:task13-2.css
+//main:ture
+@back:#29bde0;
+@con-top-back:#b9e9f5;
+@con-back:#f5c97b;
+@con-end-back:#83b09a;
+@footer-btn:#fbb435;
+.flex{display: flex;}
+.pos-abs{position: absolute;}
+.pos-re{position: relative;}
+.pos-fix{position: fixed;}
+.width{width: 100%;}
+.con-bor{border: .2rem solid #fff;}
+html,body{
+	font-size: 62.5%;
+	background: @back;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*header*/
+.header-top{
+	.flex;
+	align-items: center;
+	justify-content: space-between;
+	.width;
+	height: 5rem;
+	padding: 0 1rem;
+	font-size: 2.2rem;
+	color: #fff;
+	background: @back;
+}
+.menu, .close{
+	width: 3rem;
+	height: 3rem;
+	background: url(image/投票/header-left.png) no-repeat 50% 90%;
+	background-size: auto 2.2rem;
+}
+.close{
+	background: url(image/投票/header-right.png) no-repeat 50% 90%;
+	background-size: auto 2.2rem;
+}
+/*header-hot*/
+.hot{
+	.width;
+	line-height: 4rem;
+	font-size: 1.7rem;
+	padding-left: 3rem;
+	background: @con-top-back url(image/投票/main-top.png) no-repeat 98% 50%;
+	background-size: auto 2.5rem;
+}
