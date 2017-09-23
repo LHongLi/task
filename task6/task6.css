@@ -16,7 +16,7 @@ div p{
 div.container div.row div {
 	text-align:center;
 }
-button{ 
+button{
  }
 .header{
 	display: flex;
@@ -39,12 +39,12 @@ button{
 .header-left{
 	font-size: 1.5rem;
 	border-top-left-radius: 8px;
-	border-bottom-left-radius: 8px; 
+	border-bottom-left-radius: 8px;
 	padding-right: 1rem;
 	padding: 0 2rem 0 2rem;
 	background-color: #55A8B3;
 	color: #FFFFFF;
-	border: none;	         
+	border: none;
 }
 
 .header-right{
@@ -52,7 +52,7 @@ button{
 	border-radius: 8px;
 	color: #5FC0CD;
 	margin-left: -1rem;
-	padding: 0 2rem 0 2rem; 
+	padding: 0 2rem 0 2rem;
 	background-color: #FFFFFF;
 	border: none;
 }
@@ -72,7 +72,7 @@ button{
 	border-bottom: 1px solid #AAA;
 }
 .top-content{
-	border-right: solid 1px #DCDCDC;	
+	border-right: solid 1px #DCDCDC;
 	color: #AAA;
 	padding: 0;
 }
@@ -121,7 +121,7 @@ button{
 	float: left;
 	height: 1.2rem;
 	width: 1.2rem;
-	background-position:-28px 0;
+	background-position:-34px 0;
 	margin: 0.3rem 0.5rem;
 }
 
@@ -143,7 +143,7 @@ button{
 }
 .money{
 	color: #FF0000;
-	font-size: 1.35rem;	
+	font-size: 1.35rem;
 }
 
 .money a{
@@ -171,9 +171,9 @@ button{
 
 .list-footer i{
 	float: left;
-	height: 11.5px;
-	width: 9.5px;
-	background-position: -14.5px 0;
+	height: 13px;
+	width: 14px;
+	background-position: -16px 0;
 	margin: 0.3rem 0.5rem 0 1.15rem;
 }
 

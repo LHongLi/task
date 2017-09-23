@@ -1,0 +1,197 @@
+//out:task12-2.css
+//main:ture
+@back1:#5fc0cd;
+@back2:#f8fafb;
+@text1:#fff;
+@text2:@back1;
+@text3:#b4b4b4;
+@text4:#e63b0e;
+@bor:#b4b4b4;
+.flex{display: flex;
+	align-items: center;
+		flex-wrap: wrap;}
+.width{width: 100%;}
+.height{height:4.5rem;}
+.pos-re{position: relative;}
+.pos-abs{position: absolute;}
+.pos-fix{position: fixed;}
+.bor-bot{border-bottom: .1rem solid @bor;}
+html, body{
+	font-size:62.5%;
+	margin: 0;
+}
+header{
+	.flex;
+	justify-content: center;
+	.pos-fix;
+	top: 0;
+	left: 0;
+	.width;
+	.height;
+	z-index: 99;
+	background: url(image/task12-2/header.png) no-repeat 99% 50%;
+	background-size: auto 50%;
+	background-color: @back1;
+}
+.head1,.head2{
+	width: 10rem;
+	height:3rem;
+	margin:0;
+	font-size: 1.5rem;
+	border: .1rem solid ;
+	border-radius: .5rem;
+}
+.head1{
+	border-color: #55a8b3;
+	color: @text1;
+	background-color: #55a8b3;
+}
+.head2{
+	margin-left: -.7rem;
+	border-color: @text1;
+	color: @text2;
+	background-color: @text1;
+}
+/*main*/
+main{
+	margin-bottom: 4.5rem;
+}
+/*main-down*/
+.main-top{
+	.flex;
+	margin-top: 4.5rem;
+	.bor-bot;
+	color:@text3;
+}
+.mt-down{
+	flex:1;
+	.pos-re;
+}
+.mt-left,.mt-center,.mt-right{
+	.width;
+	height:3rem;
+	background: url(image/task12-2/main-top.png) no-repeat 95% 50%;
+	border: none;
+}
+.mt-center{
+	border-left: .1rem solid #e1e5e7;
+	border-right: .1rem solid #e1e5e7;
+}
+.mt-left-con,.mt-center-con,.mt-right-con{
+	display:none;
+	.pos-abs;
+	.width;
+	padding-top: .3rem;
+}
+.mt-left-con a,.mt-center-con a,.mt-right-con a{
+	display: block;
+	line-height: 3rem;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	border-left: .1rem solid @bor;
+	border-right: .1rem solid @bor;
+	color: #000;
+	background: #f1f1f1;
+}
+.bor-rad1{
+	border-top: .1rem solid @bor;
+	border-top-left-radius: .5rem;
+	border-top-right-radius: .5rem;
+}
+.bor-rad3{
+	.bor-bot;
+	border-bottom-left-radius: .5rem;
+	border-bottom-right-radius: .5rem;
+}
+.mt-left-con a:hover,.mt-center-con a:hover,.mt-right-con a:hover {
+	background: @bor;
+}
+.mt-down:hover .mt-left-con,
+.mt-down:hover .mt-center-con,
+.mt-down:hover .mt-right-con,{
+    display: block;
+
+}
+/*main-info*/
+.info{
+	.flex;
+	flex-direction: column;
+	align-items: flex-start;
+	.width;
+	.bor-bot;
+}
+.info-top, .info-con, .info-end{
+	flex:1;
+	justify-content: space-between;
+	line-height: 2rem;
+	font-size: 1.5rem;
+	margin: .3rem 0;
+	color: @text3;
+}
+.info-top{
+	padding-left: 3rem;
+	background:url(image/task12-2/calendar.png) no-repeat 1rem 45%;
+	background-size: auto 1.5rem;
+}
+.info-con{
+	display: flex;
+	.width;
+}
+.con-left{
+	font-weight: bold;
+	padding-left: 3rem;
+	color: #000;
+}
+.con-right{
+	padding-right: 2rem;
+	margin-right: 1rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: red;
+	background: url(image/task12-2/right.png)no-repeat 100% 50%;
+	background-size: auto 2rem;
+}
+.info-end{
+	padding-left: 3rem;
+	background:url(image/task12-2/location.png) no-repeat 1rem 45%;
+	background-size: auto 1.5rem;
+}
+/*footer*/
+footer{
+	.flex;
+	.pos-fix;
+	bottom: 0;
+	left: 0;
+	.width;
+	.height;
+	background: @back2;
+	.foot1{
+			text-align: center;
+			background:url(image/task12-2/home.png) no-repeat 50% 35%;
+			color: @text2;
+			background-size: auto 50%;
+		  }
+	.foot2{
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			background:url(image/task12-2/write.png) no-repeat 50% 50%;
+			background-size: auto 50%;
+			background-color: @back1;
+		}
+	.foot3{
+			text-align: center;
+			background:url(image/task12-2/me.png) no-repeat 50% 35%;
+			color: @text3;
+			background-size: auto 50%;
+		  }
+}
+.foot1, .foot3{
+	flex: 1;
+	line-height: 7rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-decoration: none;
+	height: 4rem;
+}
