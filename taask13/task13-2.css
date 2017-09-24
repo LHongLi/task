@@ -16,6 +16,9 @@
 .con-bor {
   border: .2rem solid #fff;
 }
+.a {
+  text-decoration: none;
+}
 html,
 body {
   font-size: 62.5%;
@@ -31,12 +34,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 5rem;
   padding: 0 1rem;
   font-size: 2.2rem;
   color: #fff;
   background: #29bde0;
+  z-index: 99;
 }
 .menu,
 .close {
@@ -49,12 +55,111 @@ body {
   background: url(image/投票/header-right.png) no-repeat 50% 90%;
   background-size: auto 2.2rem;
 }
-/*header-hot*/
 .hot {
   width: 100%;
   line-height: 4rem;
   font-size: 1.7rem;
   padding-left: 3rem;
+  margin-top: 5rem;
   background: #b9e9f5 url(image/投票/main-top.png) no-repeat 98% 50%;
   background-size: auto 2.5rem;
+}
+.down {
+  width: 1rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+  border-width: 1rem .5rem 0 .5rem;
+  border-color: #b9e9f5 transparent;
+  border-style: solid;
+}
+.con-top {
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+/*end header*/
+/*content*/
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+.idcard {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 1.5rem;
+  width: 33.33333%;
+}
+.con {
+  position: relative;
+  width: 7rem;
+  line-height: 5.45rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border: .2rem solid #fff;
+  background: #f5c97b;
+}
+.number {
+  width: 100%;
+  height: 1.2rem;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.2rem;
+  color: #fff;
+  background: #8ab09a;
+}
+.hover {
+  display: none;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.one,
+.two,
+.three,
+.fire {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 1rem;
+  background: url(image/投票/hover.png) no-repeat;
+  background-size: auto 1.5rem;
+}
+.one {
+  background-position: 0 0;
+}
+.two {
+  background-position: -1.5rem 0;
+}
+.three {
+  background-position: -3rem 0;
+}
+.fire {
+  background-position: -4.5rem 0;
+}
+button:hover .hover {
+  display: flex;
+  justify-content: space-between;
+}
+/*end content*/
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 0;
+  border-top: .2rem solid #fff;
+  background: #29bde0;
+}
+.yes {
+  text-decoration: none;
+  width: 40%;
+  text-align: center;
+  line-height: 4rem;
+  font-size: 2rem;
+  color: #fff;
+  background: #fbb435;
 }
