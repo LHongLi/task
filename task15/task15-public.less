@@ -1,0 +1,117 @@
+//out:task15-public.css
+//main:ture
+/* 重置样式 */
+html{font-size:62.5%;}
+body,p{
+	margin:0;
+	background-color: #fafafa;
+}
+a{text-decoration: none;}
+ul,li{
+	padding: 0;
+	list-style: none;
+}
+button{border: 0;}
+/* end 重置样式 */
+
+/* 基础样式 */
+.p-pad{padding:0 15%;}
+.p-back{background-color: #29b078;}
+.p-fb{font-weight: bold;}
+.p-tcf{color: #fff;}
+.p-tca{color: #fafafa;}
+.p-tcbc{color: #29b078;}
+.p-bor{border: .1rem solid #dedede;}
+.p-w1{width: 100%;}
+.p-w2{width: 50%;}
+.p-w3{width: 33.33333%;}
+.p-w4{width: 25%;}
+.p-w5{width: 20%;}
+.p-w10{width: 10%;}
+.p-h6{height: 6rem;}
+.p-lh6{line-height: 6rem;}
+.p-box{box-sizing: border-box;}
+/* end 基础样式 */
+
+/* 基础结构样式 */
+.p-fx{
+	display: flex;
+}
+.p-fx-cen{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.p-fx-start{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.p-fx-end{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.p-fx-jb{
+	display: flex;
+	justify-content: space-between;
+}
+/* end 基础结构样式 */
+
+/* 页面通用样式-头部 */
+/* 头部-联系方式 */
+.hd-t{
+	width: 2.2rem;
+	height: 2rem;
+	margin-left: 1rem;
+}
+.hd-tp{
+	.p-fx-jb;
+	align-items: center;
+	.p-tcbc;
+	.p-w1;
+	.p-pad;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	.p-box;
+	.left{
+		.p-fb;
+		font-size: 1.5rem;
+	}
+	.right{
+		.p-fx;
+		.wx{
+			.hd-t;
+			background: url(home/通信方式.png) no-repeat 0 0;
+			background-size: auto 2rem;
+		}
+		.qq{
+			.hd-t;
+			background: url(home/通信方式.png) no-repeat -50px 0;
+			background-size: auto 2rem;
+		}
+		.sina{
+			.hd-t;
+			background: url(home/通信方式.png) no-repeat -100px 0;
+			background-size: auto 2rem;
+		}
+	}
+}
+/* 头部-导航栏 */
+.hd-nav{
+	.p-fx-end;
+	.p-pad;
+	.p-back;
+	.btn{
+		.p-fx-cen;
+		.p-w10;
+		.p-lh6;
+		.p-tcf;
+		.p-fb;
+		border-bottom: .2rem solid transparent;
+	}
+	.btn:hover{
+		border-bottom: .2rem solid #fff;
+	}
+}
+/* end 页面通用样式-头部 */

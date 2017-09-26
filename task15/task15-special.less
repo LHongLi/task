@@ -1,0 +1,39 @@
+//out:task15-special.css
+//main:ture
+@import "task15-public";
+.img-ture(@w){
+	width: @w;
+	height: @w/3.2;
+	overflow: hidden;
+	.img-collection{
+		float: left;
+		width: @w*5;
+		height: @w/3.2;
+		transform: translate(0,0);
+		animation: ture 15s linear infinite normal;
+		@keyframes ture{
+        0% {transform: translate(0,0);}
+        10% {transform: translate(0,0);}
+
+        20% {transform: translate(-20%,0);}
+        30% {transform: translate(-20%,0);}
+
+        40% {transform: translate(-40%,0);}
+        50% {transform: translate(-40%,0);}
+
+        60% {transform: translate(-60%,0);}
+        70% {transform: translate(-60%,0);}
+
+        80% {transform: translate(-80%,0);}
+        90% {transform: translate(-80%,0);}
+
+		100% {transform: translate(0,0);}
+		}
+	}
+}
+.img-ture{
+	.img-ture(100vw)
+}
+.ture-img{
+	width: 100vw;
+}
