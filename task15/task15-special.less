@@ -1,8 +1,10 @@
 //out:task15-special.css
 //main:ture
 @import "task15-public";
+// 页面一
+	// 轮播图
+
 .img-ture(@w){
-	width: @w;
 	height: @w/3.2;
 	overflow: hidden;
 	.img-collection{
@@ -10,7 +12,7 @@
 		width: @w*5;
 		height: @w/3.2;
 		transform: translate(0,0);
-		animation: ture 15s linear infinite normal;
+		animation: ture 10s linear infinite normal;
 		@keyframes ture{
         0% {transform: translate(0,0);}
         10% {transform: translate(0,0);}
@@ -32,8 +34,39 @@
 	}
 }
 .img-ture{
-	.img-ture(100vw)
+	.img-ture(100vw);
 }
-.ture-img{
-	width: 100vw;
+
+	// end 轮播图
+
+
+// 页面二
+// 广告
+.banner{
+	height: 20rem;
+	background: url(sce/header.png) no-repeat 50% 50%;
+	background-size: 100%;
 }
+@media screen and (max-width:1440px){
+	.banner{height: 15rem;}
+}
+@media screen and (max-width:1024px){
+	.banner{height: 10.67rem;}
+}
+@media screen and (max-width:768px){
+	.banner{height: 8rem;}
+}
+@media screen and (max-width:720px){
+	.banner{height: 7.5rem;}
+}
+@media screen and (max-width:425px){
+	.banner{height: 4.43rem;}
+}
+@media screen and (max-width:375px){
+	.banner{height: 3.91rem;}
+}
+@media screen and (max-width:320px){
+	.banner{height: 3.34rem;}
+}
+//end 广告
+//end 页面二
