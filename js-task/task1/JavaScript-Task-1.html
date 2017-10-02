@@ -17,22 +17,8 @@
 			<div class="box"></div>
 			<div class="box"></div>
 		</div>
-		<button class='btn' onclick="start()">开始闪动</button>
-		<button class='btn' onclick="close()">结束闪动</button>
+		<button class="btn" onclick="start()">开始闪动</button>
+		<button class="btn" onclick="close()">结束闪动</button>
 		<script src="JavaScript-Task-1.js"></script>
-		<script type="text/javascript">
-var count=8;
-var originalArray=new Array;//原数组
-//给原数组originalArray赋值
-for (var i=0;i<count;i++){
-originalArray[i]=i+1;
-}
-var d1=new Date().getTime();
-originalArray.sort(function(){ return 0.5 - Math.random(); });
-for (var i=0;i<count;i++){
-document.write(originalArray[i]+" , ");
-}
-var d2=new Date().getTime();
-</script>
 	</body>
 </html>
