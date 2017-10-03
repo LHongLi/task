@@ -1,25 +1,27 @@
 
 var block=document.getElementsByClassName("box");//获取格子的dom
-//随机三个格子生成三个随机颜色
+// 随机三个格子生成三个随机颜色
 var open;
-var	stop=true;
-function start(){
-	if(stop){
-		open=setInterval("startShow()",1000);//添加定时执行函数
-		stop=false;
-	}
+var click=true;
+function start() {
+    if(click) {
+        open = setInterval(startShow, 1000);
+        click=false;
+    }
 }
-function close(){
-	clearInteval(open);
-	//清除定时执行函数
-	var block=document.getElementsByClassName("box");
-	//获取格子的dom
+//终止函数，所有块回复原背景色
+function close() {
+    clearInterval(open);
+    var block = document.getElementsByClassName("box");
 	for(var i=0;i<block.length;i++){
-	//每当'i'数组长度小于'block'的数组长度时,i++
-		block[i].style.background = "orange";
-		//数组'block'中的'i'下标的元素色为'orange'
+		block[i].style.background="orange";
 	}
+    click=true;
 }
+
+
+
+
 function startShow(){
 	randomNum();
 	var num = randomNum();
