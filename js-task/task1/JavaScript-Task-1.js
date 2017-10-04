@@ -54,5 +54,5 @@ function startShow(){
 		}
 		return '#'+color;	//在返回的颜色数组前加上'#'来满足16进制颜色数值规格
 		//生成随机色
-	}alert(randomColor())
+	}
 }
