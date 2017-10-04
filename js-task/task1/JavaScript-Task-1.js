@@ -46,7 +46,7 @@ function startShow(){
 
 	//获取随机颜色
 	function randomColor(){
-		color=Math.floor(Math.random()*0xffffff).toString(16);
+		color=Math.floor(Math.random()*16777215).toString(16);
 		if(color.hength<6){			//判断'color'的数组长度是否'<6'
 			for(var i=0;i<6;i++){
 				color="0"+color[i];//当'color'的数组长度小于6在首位加一个'0'
@@ -54,5 +54,5 @@ function startShow(){
 		}
 		return '#'+color;	//在返回的颜色数组前加上'#'来满足16进制颜色数值规格
 		//生成随机色
-	}
+	}alert(randomColor())
 }
