@@ -43,7 +43,7 @@ function peoNum(){
 }
 //获取杀手和平民的数组并打乱
 function dealing(){
-	var killNum = document.getElementById("killerNum").value;
+	var kill = document.getElementById("killerNum").value;
 	var civy = document.getElementById("civyNum").value;
 	var k = new Array();
 	for(var i = 0; i < kill; i++){
@@ -53,8 +53,9 @@ function dealing(){
 	for( var i = 0; i< civy; i++){
 		p[i] = "civy";
 	}
-	var people = people.concat(aa);
-	all.shuffle();
+	var people = k.concat(p);
+	people.shuffle();
+	alert(people);
 }
 // 限制数值
 function goDeal(){
@@ -62,6 +63,13 @@ function goDeal(){
 	if(pd<4||pd>18){
 		alert("请输入正确的数值");
 	}else{
-
+		dealing();
 	}
+}
+// 添加键盘事件
+document.onkeydown=function(event){
+     var e = event || window.event || arguments.callee.caller.arguments[0];
+     if(e && e.keyCode==13){ // 按 enter
+         goDeal();
+	 }
 }

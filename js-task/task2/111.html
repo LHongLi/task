@@ -5,43 +5,33 @@
 		<title>132</title>
 	</head>
 	<body>
+		<p id="number">A,2,3,4,5,6,7,8,9,10,j,q,k,joker,JOKER</p>
+		<button type="button" name="button" onclick="click">
+			点击触发洗牌
+		</button>
 		<script type="text/javascript">
-		// function shuffle(arr){
-		//   var len = arr.length;
-		//   for(var i = 0; i < len - 1; i++){
-		//     var idx = Math.floor(Math.random() * (len - i));
-		//     var temp = arr[idx];
-		//     arr[idx] = arr[len - i - 1];
-		//     arr[len - i -1] = temp;
-		//   }
-		//   return arr;
-		// }
-		//
-		// var arr = [0,1,2,3,4,5,6,7,8];
-		// var res = [0,0,0,0,0,0,0,0,0,0];
-		//
-		// var t = 10000;
-		// for(var i = 0; i < t; i++){
-		//   var sorted = shuffle(arr.slice(0));
-		//   sorted.forEach(function(o,i){
-		//     res[i] += o;
-		//   });
-		// }
-		//
-		// res = res.map(function(o){
-		//   return o / t;
-		// });
-		//
-		// console.log(arr);
-		var arr = [1,2,3,4,5,6,7,8,9,],
+	Array.prototype.shuffle=function(){
+		var input=this;
+		for(var i=input.length-1;i>=0;i--){
+			var randomIndex=Math.floor(Math.random()*(i+1));
+			var itemAtIndex=input[randomIndex];
+			input[randomIndex]=input[i];
+			input[i]=itemAtIndex;
+		}
+		return input;
+	}
+	function click(){
+		var card=document.getElementById("number");
+		card.shuffle();
 
-　　r = arr.sort(function(){
+	}
+	document.onkeydown=function(event){
+	     var e = event || window.event || arguments.callee.caller.arguments[0];
+	     if(e && e.keyCode==13){ // 按 enter
+	         click();
+		 }
+	}
 
-　　return Math.random() > .5 ? -1:1;
-
-});
-
-console.log(r);
 		</script>
 	</body>
 </html>
