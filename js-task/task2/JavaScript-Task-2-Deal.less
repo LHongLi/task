@@ -1,0 +1,148 @@
+// out:JavaScript-Task-2-Deal.css
+// main:ture
+//重置样式表
+button{	border:none;}
+p,hr{margin: 0;}
+html,body{
+	font-size: 62.5%;
+	padding: 0;
+}
+//通用
+@color:#29bde0;
+@color-f:#f8bd4a;
+.pos-fix{position: fixed;}
+.pos-abs{position: absolute;}
+.pos-rel{position: relative;}
+.flex{display: flex;}
+.font-fb{font-weight: bold;}
+.font-sz(@x){font-size: @x;}
+.text-cen{text-align: center;}
+.wd(@w){width: @w;}
+.hg(@h){height: @h;}
+.lhg(@lh){line-height: @lh;}
+.pad-lr(@l,@r){
+	padding-left: @l;
+	padding-right: @r;
+}
+.pad-tb(@t,@b){
+	padding-top: @t;
+	padding-bottom: @b;
+}
+.mar-lr(@l,@r){
+	margin-left: @l;
+	margin-right: @r;
+}
+.mar-tb(@t,@b){
+	margin-top: @t;
+	margin-bottom: @b;
+}
+.bor-s(@bs){border-radius:@bs;}
+.box-sz{box-sizing: border-box;}
+//头部
+.top{
+	.flex;
+	.pos-fix;
+	.wd(100%);
+	.hg(4rem);
+	.pad-lr(.5rem,0);
+	top:0;
+	left: 0;
+	align-items: center;
+	background: @color;
+	.back{
+		.wd(2rem);
+		.hg(4rem);
+		background: url(image/back.png) no-repeat 50% 50%;
+		background-size: 1rem auto;
+	}
+}
+//信息
+.main-top{
+	.font-sz(2rem);
+	.lhg(3rem);
+	.mar-tb(4.5rem,0);
+	.text-cen;
+}
+.people{
+	.flex;
+	height: 25rem;
+	.killer{
+		.hg(4rem);
+		.lhg(4rem);
+		.font-sz(1.5rem);
+		.pad-lr(5rem,0);
+		flex:1;
+		background: url(image/killer.png) no-repeat 1.5rem 50%;
+		.killernum{
+			.font-sz(1.5rem);
+			.font-fb;
+			.text-cen;
+			.wd(1.5rem);
+			border: none;
+			color: @color-f;
+		}
+	}
+	.civy{
+		.hg(4rem);
+		.lhg(4rem);
+		.font-sz(1.5rem);
+		.pad-lr(5rem,0);
+		flex:1;
+		background: url(image/civy.png) no-repeat 1.5rem 50%;
+		.civynum{
+			.font-sz(1.5rem);
+			.font-fb;
+			.text-cen;
+			.wd(1.5rem);
+			border: none;
+			color: @color-f;
+		}
+	}
+}
+//底部
+.enter{
+	.pos-fix;
+	.pad-lr(1rem,1rem);
+	.pad-tb(5rem,0);
+	.wd(100%);
+	.box-sz;
+	bottom: 3rem;
+	left: 0;
+	.text{
+		.flex;
+		.pad-tb(0,7rem);
+		justify-content: center;
+		.left{
+			.font-fb;
+			.lhg(3rem);
+			.font-sz(2rem);
+			.pad-lr(0,.5rem);
+		}
+		.input-box{
+			.font-fb;
+			.wd(3rem);
+			.font-sz(2rem);
+			.text-cen;
+			.bor-s(.5rem);
+			background: #ededed;
+			border: .2rem solid #ededed;
+			color: @color-f;
+		}
+		.right{
+			.font-fb;
+			.lhg(3rem);
+			.font-sz(1.5rem);
+			.pad-lr(.5rem,0);
+			color: @color-f;
+		}
+	}
+	.deal{
+		.wd(100%);
+		.font-sz(3rem);
+		.bor-s(.5rem);
+		.lhg(5rem);
+		.mar-tb(3rem,0);
+		color: #fff;
+		background: @color-f;
+	}
+}
