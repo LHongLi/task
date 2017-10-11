@@ -1,4 +1,4 @@
-
+	
 var block=document.getElementsByClassName("box");//获取格子的dom
 
 
