@@ -146,3 +146,8 @@ body {
   color: #fff;
   background: #f8bd4a;
 }
+@media screen and (max-width: 425px) and (min-width: 320px) {
+  .enter .text .left {
+    font-size: 1.5rem;
+  }
+}

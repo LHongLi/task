@@ -134,14 +134,14 @@ body{
 	.flop{
 		.wd(100%);
 		.hg(30rem);
-		.mar-tb(10rem,10rem);
+		.mar-tb(0,10rem);
 		background: url(image/fan.png) no-repeat 50% 50%;
 		background-size: auto 60%;
 	}
 	.over{
 		.wd(100%);
 		.hg(30rem);
-		.mar-tb(10rem,10rem);
+		.mar-tb(5rem,5rem);
 		.font-sz(3rem);
 		display: none;
 		font-weight: bold;
@@ -171,6 +171,18 @@ body{
 		}
 	}
 }
+@media screen and (max-width: 425px) and (min-width: 320px){
+	.main{
+		.flop{
+			background-size: auto 50%;
+		}
+		.over{
+			.img{
+				.wd(70%);
+			}
+		}
+	}
+}
 //end main
 
 
@@ -190,7 +202,7 @@ body{
 	background: @footer;
 	.id1{
 		.hg(3rem);
-		.wd(2rem);
+		.wd(3rem);
 		.font-sz(3rem);
 		.bor-no;
 		text-align: center;
@@ -213,7 +225,7 @@ body{
 	background: @footer;
 	.id2{
 		.hg(3rem);
-		.wd(2rem);
+		.wd(3rem);
 		.font-sz(3rem);
 		.bor-no;
 		text-align: center;
@@ -221,5 +233,26 @@ body{
 		background: @footer;
 	}
 }
-
+.nextPage{
+	.wd(80%);
+	.hg(5rem);
+	.lh(5rem);
+	.pos-fix;
+	.bor-no;
+	.font-sz(3rem);
+	display: none;
+	bottom: 3rem;
+	left: 10%;
+	right: 10%;
+	color: #fff;
+	background: @footer;
+}
+@media screen and (max-width: 425px) and (min-width: 320px){
+	.look{
+		.font-sz(2rem);
+	}
+	.next{
+		.font-sz(2rem);
+	}
+}
 //end footer
