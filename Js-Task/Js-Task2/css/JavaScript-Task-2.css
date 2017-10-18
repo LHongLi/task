@@ -51,7 +51,7 @@ header a {
   float: left;
   width: 3rem;
   height: 3rem;
-  background: url(image/more.png) no-repeat 50% 50%;
+  background: url(../image/more.png) no-repeat 50% 50%;
   background-size: auto 1.5rem;
 }
 /*main*/
@@ -71,7 +71,7 @@ main {
   border: .1rem solid #c9c9c9;
   color: #9a9a9a;
   background: #fff;
-  background: url(image/header-right.png) no-repeat 95% 50%;
+  background: url(../image/header-right.png) no-repeat 95% 50%;
   background-size: auto 2rem;
   background-color: #fff;
 }
@@ -105,7 +105,7 @@ main {
   padding: .5rem 2.5rem;
   font-size: 1.5rem;
   color: #787878;
-  background: url(image/right.png) no-repeat 99.5% 44%;
+  background: url(../image/right.png) no-repeat 99.5% 44%;
   background-size: auto 3rem;
 }
 .ed1,

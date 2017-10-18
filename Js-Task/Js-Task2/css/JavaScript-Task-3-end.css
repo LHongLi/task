@@ -45,6 +45,9 @@ h6 {
 .pos-re {
   position: relative;
 }
+.font-wb {
+  font-weight: bold;
+}
 .bor-no {
   border: none;
 }
@@ -66,7 +69,7 @@ h6 {
   height: 4rem;
   border: none;
   background-color: #29bde0;
-  background: url(image/back.png) no-repeat 50% 50%;
+  background: url(../image/back.png) no-repeat 50% 50%;
   background-size: 1rem auto;
 }
 .header .close {
@@ -74,8 +77,37 @@ h6 {
   height: 4rem;
   border: none;
   background-color: #29bde0;
-  background: url(image/close.png) no-repeat 50% 50%;
+  background: url(../image/close.png) no-repeat 50% 50%;
   background-size: 2rem auto;
+}
+.tip {
+  position: relative;
+  width: 100%;
+}
+.tip .top {
+  padding-left: 3rem;
+  padding-right: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: #b9e9f5;
+}
+.tip .downsj {
+  position: absolute;
+  width: 0;
+  border: 0.6rem solid transparent;
+  border-top: 0.8rem solid #b9e9f5;
+  top: 3rem;
+  left: 2rem;
+}
+.tip .bot {
+  padding-left: 2rem;
+  padding-right: 0;
+  font-weight: bold;
+  color: #fff;
 }
 .all {
   width: 100%;
@@ -103,7 +135,7 @@ h6 {
   border: none;
   color: #fff;
   text-align: center;
-  background: #fbb435;
+  background: transparent;
 }
 .all .cards .num {
   width: 100%;

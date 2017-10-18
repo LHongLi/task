@@ -64,7 +64,7 @@ body {
   height: 4rem;
   border: none;
   background-color: #29bde0;
-  background: url(image/back.png) no-repeat 50% 50%;
+  background: url(../image/back.png) no-repeat 50% 50%;
   background-size: 1rem auto;
 }
 .header .close {
@@ -72,7 +72,7 @@ body {
   height: 4rem;
   border: none;
   background-color: #29bde0;
-  background: url(image/close.png) no-repeat 50% 50%;
+  background: url(../image/close.png) no-repeat 50% 50%;
   background-size: 2rem auto;
 }
 .main {
@@ -112,7 +112,7 @@ body {
   height: 30rem;
   margin-top: 0;
   margin-bottom: 10rem;
-  background: url(image/fan.png) no-repeat 50% 50%;
+  background: url(../image/fan.png) no-repeat 50% 50%;
   background-size: auto 60%;
 }
 .main .over {

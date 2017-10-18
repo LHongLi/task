@@ -1,9 +1,9 @@
 //页面头部按钮点击跳转
 function deal(){
-	window.location.href = "JavaScript-Task-2-Deal.html"
+	window.location.href = "../html/JavaScript-Task-2-Deal.html"
 }
 function backHome(){
-	window.location.href = "JavaScript-Task-2.html"
+	window.location.href = "../html/JavaScript-Task-2.html"
 }
 //进入法官日志页
 function nextPage(){

@@ -43,6 +43,7 @@ html,body,p,h1,h2,h3,h4,h5,h6{margin: 0;}
 .lh(@lh){line-height: @lh;}
 .wd(@w){width:@w;}
 .font-sz(@f){font-size: @f;}
+.font-wb{font-weight: bold;}
 .pad-tb(@t,@b){
 	padding-top: @t;
 	padding-bottom: @b;
@@ -85,7 +86,7 @@ html,body,p,h1,h2,h3,h4,h5,h6{margin: 0;}
 		.hg(4rem);
 		.bor-no;
 		background-color: @header;
-		background: url(image/back.png) no-repeat 50% 50%;
+		background: url(../image/back.png) no-repeat 50% 50%;
 		background-size: 1rem auto;
 	}
 	.close{
@@ -93,11 +94,42 @@ html,body,p,h1,h2,h3,h4,h5,h6{margin: 0;}
 		.hg(4rem);
 		.bor-no;
 		background-color: @header;
-		background: url(image/close.png) no-repeat 50% 50%;
+		background: url(../image/close.png) no-repeat 50% 50%;
 		background-size: 2rem auto;
 	}
 }
 // header end
+
+
+//提示信息
+.tip{
+	.pos-re;
+	.wd(100%);
+	.top{
+		.pad-lr(3rem , 0);
+		.mar-tb(0,1rem);
+		.hg(3rem);
+		.lh(3rem);
+		.font-sz(1.3rem);
+		.font-wb;
+		background: #b9e9f5;
+	}
+	.downsj{
+		.pos-abs;
+		.wd(0);
+		.bor(.6rem,transparent);
+		.bor-top(.8rem,#b9e9f5);
+		top: 3rem;
+		left: 2rem;
+	}
+	.bot{
+		.pad-lr(2rem , 0);
+		.font-wb;
+		color: #fff;
+	}
+}
+
+//提示信息  end
 
 
 // main
@@ -123,7 +155,7 @@ html,body,p,h1,h2,h3,h4,h5,h6{margin: 0;}
 				.bor-no;
 				color: #fff;
 				text-align: center;
-				background: @footer;
+				background: transparent;
 			}
 		}
 		.num{
@@ -135,6 +167,9 @@ html,body,p,h1,h2,h3,h4,h5,h6{margin: 0;}
 			text-align: center;
 			background: #8ab09a;
 		}
+	}
+	.cards:hover{
+
 	}
 }
 // main end

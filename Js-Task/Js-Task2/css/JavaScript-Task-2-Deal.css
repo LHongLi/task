@@ -46,7 +46,7 @@ body {
 .top .back {
   width: 2rem;
   height: 4rem;
-  background: url(image/back.png) no-repeat 50% 50%;
+  background: url(../image/back.png) no-repeat 50% 50%;
   background-size: 1rem auto;
 }
 .main-top {
@@ -67,7 +67,7 @@ body {
   padding-left: 5rem;
   padding-right: 0;
   flex: 1;
-  background: url(image/killer.png) no-repeat 1.5rem 50%;
+  background: url(../image/killer.png) no-repeat 1.5rem 50%;
 }
 .people .killer .killernum {
   font-size: 1.5rem;
@@ -84,7 +84,7 @@ body {
   padding-left: 5rem;
   padding-right: 0;
   flex: 1;
-  background: url(image/civy.png) no-repeat 1.5rem 50%;
+  background: url(../image/civy.png) no-repeat 1.5rem 50%;
 }
 .people .civy .civynum {
   font-size: 1.5rem;
