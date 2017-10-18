@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+html,
+body {
+  font-size: 62.5%;
+  background: #f1f1f1;
+}
+.flex {
+  display: flex;
+}
+.flex-xc {
+  display: flex;
+  justify-content: center;
+}
+.flex-yc {
+  display: flex;
+  align-items: center;
+}
+.flex-jb {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-ja {
+  display: flex;
+  justify-content: space-around;
+}
+.pos-fix {
+  position: fixed;
+}
+.pos-abs {
+  position: absolute;
+}
+.pos-re {
+  position: relative;
+}
+.font-wb {
+  font-weight: bold;
+}
+.bor-no {
+  border: none;
+}
+.box-s {
+  box-sizing: border-box;
+}
+.text-c {
+  text-align: center;
+}
+.header {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  font-size: 2.3rem;
+  border-bottom: 0.1rem solid #74d4eb;
+  color: #fff;
+  background-color: #29bde0;
+}
+.header .back {
+  width: 3rem;
+  height: 4rem;
+  border: none;
+  background-color: #29bde0;
+  background: url(../image/back.png) no-repeat 50% 50%;
+  background-size: 1rem auto;
+}
+.header .close {
+  width: 3rem;
+  height: 4rem;
+  border: none;
+  background-color: #29bde0;
+  background: url(../image/close.png) no-repeat 50% 50%;
+  background-size: 2rem auto;
+}
+.day {
+  width: 98.6%;
+  height: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+  margin-left: 0.7%;
+  margin-right: 0.7%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.9rem;
+  border: 0.1rem solid #ccc;
+  text-align: center;
+  color: #24a7c6;
+  background-color: #fff;
+}
+.process {
+  display: flex;
+  width: 98.6%;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: 0.7%;
+  margin-right: 0.7%;
+  padding-left: 3rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border: 0.1rem solid #ccc;
+  background: #fff;
+}
+.process .sjx {
+  position: absolute;
+  width: 0;
+  border: 1rem solid transparent;
+  border-bottom: 1rem solid #fff;
+  top: -2.05rem;
+  left: 50%;
+  margin-left: -1rem;
+}
+.process .nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.process .nav .line {
+  position: absolute;
+  height: 100%;
+  border-left: 0.1rem solid #ccc;
+  z-index: 10;
+  left: 1.25rem;
+}
+.process .nav .moon {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 50%;
+  z-index: 20;
+  background: url(../image/night.png) no-repeat 50% 50%;
+  background-color: #fff;
+  background-size: auto 1.8rem;
+}
+.process .nav .sun {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 50%;
+  top: 4rem;
+  z-index: 20;
+  background: url(../image/day.png) no-repeat 50% 50%;
+  background-color: #fff;
+  background-size: auto 1.8rem;
+}
+.process .list {
+  margin-left: 5rem;
+  margin-right: 0;
+  width: 100%;
+}
+.process .list .event {
+  position: relative;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #29bde0;
+}
+.process .list .event .leftsj {
+  position: absolute;
+  width: 0;
+  border: 0.7rem solid transparent;
+  border-right: 1.25rem solid #29bde0;
+  top: .5rem;
+  left: -1.9rem;
+}
+.process .list .nomar {
+  margin: 0;
+}
+.footer {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 10rem;
+  bottom: 0;
+  left: 0;
+  background: #29bde0;
+}
+.footer .over {
+  width: 45%;
+  height: 5rem;
+  line-height: 5rem;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  background: #fbb435;
+}
+.footer .log {
+  width: 45%;
+  height: 5rem;
+  line-height: 5rem;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  background: #fbb435;
+}

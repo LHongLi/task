@@ -1,0 +1,197 @@
+//out:log.css
+//main:ture
+//重置样式表
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	font-size: 62.5%;
+	background: @header;
+}
+a{text-decoration: none;}
+html,body,p,h1,h2,h3,h4,h5,h6{margin: 0;}
+//布局组件
+.flex{display: flex;}
+.flex-xc{
+	display: flex;
+	justify-content:center;
+}
+.flex-yc{
+	display: flex;
+	align-items: center;
+}
+.flex-jb{
+	display: flex;
+	justify-content: space-between;
+}
+.pos-fix{position: fixed;}
+.pos-abs{position: absolute;}
+.pos-re{position: relative;}
+
+//end 布局组件
+
+
+//通用组件
+
+@header:#29bde0;
+@main:#29bde0;
+@main-con:#ffedc5;
+@main-text:#f56b81;
+@footer:#fbb435;
+.hg(@h){height:@h;}
+.lh(@lh){line-height: @lh;}
+.wd(@w){width:@w;}
+.font-sz(@f){font-size: @f;}
+.font-wb{font-weight: bold;}
+.pad-tb(@t,@b){
+	padding-top: @t;
+	padding-bottom: @b;
+}
+.pad-lr(@l,@r){
+	padding-left: @l;
+	padding-right: @r;
+}
+.mar-tb(@t,@b){
+	margin-top: @t;
+	margin-bottom: @b;
+}
+.mar-lr(@l,@r){
+	margin-left: @l;
+	margin-right: @r;
+}
+.bor(@rem,@color){border: @rem solid @color;}
+.bor-top(@rem,@color){border-top: @rem solid @color;}
+.bor-bottom(@rem,@color){border-bottom: @rem solid @color;}
+.bor-left(@rem,@color){border-left: @rem solid @color;}
+.bor-right(@rem,@color){border-right: @rem solid @color;}
+.bor-r(@r){border-radius: @r;}
+.bor-no{border: none;}
+.box-s{box-sizing: border-box;}
+
+//end 通用组件
+
+
+// header
+.header{
+	.flex-jb;
+	.flex-yc;
+	.hg(4rem);
+	.font-sz(2.3rem);
+	.bor-bottom(.1rem,#74d4eb);
+	color:#fff;
+	background-color: @header;
+	.back{
+		.wd(3rem);
+		.hg(4rem);
+		.bor-no;
+		background-color: @header;
+		background: url(../image/back.png) no-repeat 50% 50%;
+		background-size: 1rem auto;
+	}
+	.close{
+		.wd(3rem);
+		.hg(4rem);
+		.bor-no;
+		background-color: @header;
+		background: url(../image/close.png) no-repeat 50% 50%;
+		background-size: 2rem auto;
+	}
+}
+// header end
+
+
+//提示信息
+.tip{
+	.pos-re;
+	.wd(100%);
+	.top{
+		.pad-lr(3rem , 0);
+		.mar-tb(0,1rem);
+		.hg(3rem);
+		.lh(3rem);
+		.font-sz(1.3rem);
+		.font-wb;
+		background: #b9e9f5;
+	}
+	.downsj{
+		.pos-abs;
+		.wd(0);
+		.bor(.6rem,transparent);
+		.bor-top(.8rem,#b9e9f5);
+		top: 3rem;
+		left: 2rem;
+	}
+	.bot{
+		.pad-lr(2rem , 0);
+		.font-wb;
+		color: #fff;
+	}
+}
+
+//提示信息  end
+
+
+// main
+.all{
+	.wd(100%);
+	.cards{
+		.wd(33.333333333%);
+		.mar-tb(2rem,1.5rem);
+		float: left;
+		text-align: center;
+		.con{
+			.pos-re;
+			.wd(7rem);
+			.lh(5.45rem);
+			.font-sz(1.5rem);
+			.bor(.2rem,#fff);
+			text-align: center;
+			background: @footer;
+			.id{
+				.wd(100%);
+				.hg(2rem);
+				.font-sz(2rem);
+				.bor-no;
+				color: #fff;
+				text-align: center;
+				background: transparent;
+			}
+		}
+		.num{
+			.wd(100%);
+			.hg(1.2rem);
+			.lh(1.2rem);
+			.font-sz(1rem);
+			color: #fff;
+			text-align: center;
+			background: #8ab09a;
+		}
+	}
+	.cards:hover{
+
+	}
+}
+// main end
+
+
+//footer
+.game{
+	.pos-fix;
+	.wd(80%);
+	.hg(5rem);
+	.lh(5rem);
+	.bor-no;
+	.font-sz(3rem);
+	bottom: 3rem;
+	left: 10%;
+	right: 10%;
+	color: #fff;
+	background: @footer;
+}
+.game:hover{
+	.bor(.1rem,@footer);
+	color: @footer;
+	background: #fff;
+}
+//footer end

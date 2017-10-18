@@ -1,0 +1,129 @@
+//out:home.css
+//main:ture
+html, body{
+	font-size: 62.5%;
+	background-color: @main-back;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+button{
+	border:none;
+}
+@head-back:#29bde0;
+@main-back:#f0f0f0;
+@con-back:#69d1e9;
+@con-top:#fbb435;
+@text1:#9a9a9a;
+@text2:#787878;
+.flex{
+	display: flex;
+	align-items: center;
+}
+.pos-abs{position: absolute;}
+.pos-re{position: relative;}
+.pos-fix{position: fixed;}
+.bor{border: .1rem solid #c9c9c9;}
+.width{width: 100%;}
+.height{height: 5rem;}
+.a{text-decoration: none;}
+/*header*/
+header{
+	.flex;
+	.pos-fix;
+	top: 0;
+	left: 0;
+	.width;
+	height: 4rem;
+	padding-left: 1rem;
+	background-color: @head-back;
+}
+header a{
+	float: left;
+	width: 3rem;
+	height: 3rem;
+	background: url(../image/more.png) no-repeat 50% 50%;
+	background-size: auto 1.5rem;
+}
+/*main*/
+main{
+	margin-top: 4rem;
+	padding: 1rem 1.5rem;
+}
+/*con-top*/
+.con-top{
+	.flex;
+	justify-content: center;
+	.width;
+	.height;
+	font-size: 2rem;
+	.a;
+	.bor;
+	color: @text1;
+	background: #fff;
+	background: url(../image/header-right.png) no-repeat 95% 50%;
+	background-size: auto 2rem;
+	background-color: #fff;
+}
+/*game*/
+.game{
+	.width;
+	text-align: center;
+	line-height: 4rem;
+	font-size: 2rem;
+	color: @con-top;
+	border-bottom: .1rem solid @con-top;
+}
+/*con*/
+.con{
+	.flex;
+	flex-direction: column;
+	.width;
+	margin-top: 1rem;
+	.bor;
+	background-color: #fff;
+}
+/*content*/
+.content{
+	.flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	.width;
+	padding: .5rem 2.5rem;
+	font-size: 1.5rem;
+	color: @text2;
+	background: url(../image/right.png) no-repeat 99.5% 44%;
+	background-size: auto 3rem;
+}
+.ed1,.ed2,.ed3{
+	display: block;
+	width: 100%;
+	margin: 1rem 0;
+	.width;
+	.height;
+	font-size: 2rem;
+	text-align: center;
+	line-height: 5rem;
+	.a;
+	color: #fff;
+	background: @con-back;
+}
+/*con-end*/
+.con-end{
+	.flex;
+	justify-content: center;
+	.width;
+	height: 2rem;
+}
+.color, .none{
+	width: 1rem;
+	height: 1rem;
+	margin: 0 .5rem;
+	border-radius: 50%;
+	background: @main-back;
+}
+.color{
+	background: @con-back;
+}

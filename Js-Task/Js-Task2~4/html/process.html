@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width" inital-scale=1 maxmun-scale=1 minmun-scale=1 user-scalable=no>
+		<link rel="stylesheet" href="../css/process.css">
+		<title></title>
+	</head>
+	<body>
+		<!-- header -->
+		<div class="header">
+			<input type="button" class="back" onclick="deal()"></input>
+			<p>法官台本</p>
+			<input type="button" class="close" onclick="backHome()"></input>
+		</div>
+		<!-- header end -->
+
+
+		<!-- content -->
+		<p class="day">第1天</p>
+		<div class="process">
+			<div class="sjx"></div>
+			<div class="nav">
+				<div class="line"></div>
+				<div class="moon"></div>
+				<div class="sun"></div>
+				<div class="sun"></div>
+			</div>
+			<ul class="list">
+				<li class="event" id="kill">
+					<div class="leftsj" id="killsj"></div>杀手杀人</li>
+				<li class="event" id="dead">
+					<div class="leftsj" id="deadsj"></div>亡灵发表遗言</li>
+				<li class="event" id="talk">
+					<div class="leftsj" id="talksj"></div>玩家依次发言</li>
+				<li class="event nomar" id="vote">
+					<div class="leftsj" id="votesj"></div>全民投票</li>
+			</ul>
+		</div>
+		<!-- content end -->
+
+
+		<!-- footer -->
+		<div class="footer">
+			<button class="over" onclick="over()">结束游戏</button>
+			<button class="log" onclick="log()">法官日志</button>
+		</div>
+		<!-- footer end -->
+
+
+		<!-- JavaScript -->
+		<script src="../../jQuery/jquery-3.2.1.js"></script>
+		<script src="../js/js-4.js"></script>
+		<!-- JavaScript end -->
+	</body>
+</html>

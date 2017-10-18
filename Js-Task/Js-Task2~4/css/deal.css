@@ -1,0 +1,153 @@
+button {
+  border: none;
+}
+p,
+hr {
+  margin: 0;
+}
+html,
+body {
+  font-size: 62.5%;
+  padding: 0;
+}
+.pos-fix {
+  position: fixed;
+}
+.pos-abs {
+  position: absolute;
+}
+.pos-rel {
+  position: relative;
+}
+.flex {
+  display: flex;
+}
+.font-fb {
+  font-weight: bold;
+}
+.text-cen {
+  text-align: center;
+}
+.box-sz {
+  box-sizing: border-box;
+}
+.top {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  padding-left: 0.5rem;
+  padding-right: 0;
+  top: 0;
+  left: 0;
+  align-items: center;
+  background: #29bde0;
+}
+.top .back {
+  width: 2rem;
+  height: 4rem;
+  background: url(../image/back.png) no-repeat 50% 50%;
+  background-size: 1rem auto;
+}
+.main-top {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 4.5rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+.people {
+  display: flex;
+  height: 25rem;
+}
+.people .killer {
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.5rem;
+  padding-left: 5rem;
+  padding-right: 0;
+  flex: 1;
+  background: url(../image/killer.png) no-repeat 1.5rem 50%;
+}
+.people .killer .killernum {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 1.5rem;
+  border: none;
+  color: #f8bd4a;
+}
+.people .civy {
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.5rem;
+  padding-left: 5rem;
+  padding-right: 0;
+  flex: 1;
+  background: url(../image/civy.png) no-repeat 1.5rem 50%;
+}
+.people .civy .civynum {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 1.5rem;
+  border: none;
+  color: #f8bd4a;
+}
+.enter {
+  position: fixed;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 3rem;
+  left: 0;
+}
+.enter .text {
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 7rem;
+  justify-content: center;
+}
+.enter .text .left {
+  font-weight: bold;
+  line-height: 3rem;
+  font-size: 2rem;
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+.enter .text .input-box {
+  font-weight: bold;
+  width: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #ededed;
+  border: .2rem solid #ededed;
+  color: #f8bd4a;
+}
+.enter .text .right {
+  font-weight: bold;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0;
+  color: #f8bd4a;
+}
+.enter .deal {
+  width: 100%;
+  font-size: 3rem;
+  border-radius: 0.5rem;
+  line-height: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  color: #fff;
+  background: #f8bd4a;
+}
+@media screen and (max-width: 425px) and (min-width: 320px) {
+  .enter .text .left {
+    font-size: 1.5rem;
+  }
+}
