@@ -1,8 +1,8 @@
 function deal(){
-	window.location.href="../html/JavaScript-Task-2-Deal.html"
+	window.location.href="../html/deal.html"
 }
 function backHome(){
-	window.location.href="../html/JavaScript-Task-2.html"
+	window.location.href="../index.html"
 }
 var getCards = JSON.parse(sessionStorage.getItem("cards"));
 //创建n个身份牌，n等于杀手&平民总人数
@@ -36,7 +36,7 @@ window.onload = function(){
 }
 //开始游戏
 function goGame(){
-	window.location.href = "../../Js-Task4/html/Js-Task4.html";
+	window.location.href = "../html/process.html";
 }
 //创建页面头部
 function createHeader1(){
@@ -77,7 +77,6 @@ var url = window.location.search;
 console.log(url);
 var str = url.substr(1);
 console.log(str);
-
 // if(gameDay.day > 0){
 // 	createHeader1();
 // 	}if(vote > 1){

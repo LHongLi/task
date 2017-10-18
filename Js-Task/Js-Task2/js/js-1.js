@@ -1,9 +1,9 @@
 //点击跳转页面
 function deal(){
-	window.location.href="html/JavaScript-Task-2-Deal.html"
+	window.location.href="html/deal.html"
 }
 function backHome(){
-	window.location.href="html/JavaScript-Task-2.html"
+	window.location.href="../index.html"
 }
 
 
@@ -86,7 +86,7 @@ function goDeal(){
 		idCards();
 		allCards.shuffle();
 		next();
-		window.location.href="JavaScript-Task-3.html"
+		window.location.href="look.html"
 	}else{
 		alert("请输入正确的玩家数量。")
 	}

@@ -1,13 +1,13 @@
 //页面头部按钮点击跳转
 function deal(){
-	window.location.href = "../html/JavaScript-Task-2-Deal.html"
+	window.location.href = "../html/deal.html"
 }
 function backHome(){
-	window.location.href = "../html/JavaScript-Task-2.html"
+	window.location.href = "../index.html"
 }
 //进入法官日志页
 function nextPage(){
-	window.location.href = "JavaScript-Task-3-end.html"
+	window.location.href = "../html/log.html"
 }
 //读取参数
 var getCards = JSON.parse(sessionStorage.getItem("cards"));
