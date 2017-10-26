@@ -174,6 +174,25 @@ body {
   top: .5rem;
   left: -1.9rem;
 }
+.process .list .event .change {
+  position: absolute;
+  width: 0;
+  border: 0.7rem solid transparent;
+  border-right: 1.25rem solid #868686;
+  top: .5rem;
+  left: -1.9rem;
+}
+.process .list .message {
+  margin-top: -1.6rem;
+  margin-bottom: 0;
+  text-align: center;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  display: none;
+}
+.process .list .message .dc {
+  color: red;
+}
 .process .list .nomar {
   margin: 0;
 }
@@ -194,8 +213,9 @@ body {
   line-height: 5rem;
   border: none;
   font-size: 3rem;
+  border-radius: 1rem;
   color: #fff;
-  background: #fbb435;
+  background: #f4706e;
 }
 .footer .log {
   width: 45%;
@@ -203,6 +223,7 @@ body {
   line-height: 5rem;
   border: none;
   font-size: 3rem;
+  border-radius: 1rem;
   color: #fff;
   background: #fbb435;
 }

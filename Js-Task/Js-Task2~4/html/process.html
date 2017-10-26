@@ -8,7 +8,7 @@
 	<body>
 		<!-- header -->
 		<div class="header">
-			<input type="button" class="back" onclick="deal()"></input>
+			<input type="button" class="back" onclick="backPage()"></input>
 			<p>法官台本</p>
 			<input type="button" class="close" onclick="backHome()"></input>
 		</div>
@@ -16,24 +16,25 @@
 
 
 		<!-- content -->
-		<p class="day">第1天</p>
+		<p class="day">第<b class="dc" id="gameDay"></b>天</p>
 		<div class="process">
 			<div class="sjx"></div>
 			<div class="nav">
 				<div class="line"></div>
 				<div class="moon"></div>
 				<div class="sun"></div>
-				<div class="sun"></div>
 			</div>
 			<ul class="list">
 				<li class="event" id="kill">
 					<div class="leftsj" id="killsj"></div>杀手杀人</li>
+					<h3 class="message" id="killmess"><b class="dc" id="killednum"></b>号被杀,他的身份是<b class="dc" id="killedname"></b>。</h3>
 				<li class="event" id="dead">
 					<div class="leftsj" id="deadsj"></div>亡灵发表遗言</li>
 				<li class="event" id="talk">
 					<div class="leftsj" id="talksj"></div>玩家依次发言</li>
 				<li class="event nomar" id="vote">
 					<div class="leftsj" id="votesj"></div>全民投票</li>
+				<h3 class="message nomar" id="votemess"><b class="dc" id="votenum"></b>号被投票投死，他的身份是<b class="dc" id="votename"></b>。</h3>
 			</ul>
 		</div>
 		<!-- content end -->
@@ -48,8 +49,8 @@
 
 
 		<!-- JavaScript -->
-		<script src="../../jQuery/jquery-3.2.1.js"></script>
-		<script src="../js/js-4.js"></script>
+		<script src="../jQuery/jquery-3.2.1.js"></script>
+		<script src="../js/process.js"></script>
 		<!-- JavaScript end -->
 	</body>
 </html>

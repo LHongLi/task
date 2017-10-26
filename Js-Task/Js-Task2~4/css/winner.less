@@ -1,0 +1,147 @@
+//out:winner.css
+//main:ture
+@back:#29bde0;
+@footer-back:#99dff0;
+@footer-btn1:#f66f6f;
+@footer-btn2:#fbb435;
+@text1:#ffc865;
+@text2:#a6a6a6;
+.flex{display: flex;}
+.pos-abs{position: absolute;}
+.pos-re{position: relative;}
+.pos-fix{position: fixed;}
+.width{width: 100%;}
+.a{text-decoration: none;}
+.bold{font-weight: bold;}
+.footer-back{background-color: rgba(152, 223, 240, 0.7);}
+.bor-bot{border-bottom: .1rem solid #dddddd;}
+.bor-radius{border-radius: .5rem;}
+html, body{
+	font-size: 62.5%;
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+/*header*/
+header{
+	.flex;
+	justify-content: space-between;
+	align-items: center;
+	.pos-fix;
+	top: 0;
+	left: 0;
+	.width;
+	height: 5rem;
+	font-size: 2rem;
+	padding: 0 2rem;
+	.bor-bot;
+	color: #fff;
+	background: @back;
+}
+.home,.tip{
+	width: 3rem;
+	height: 3rem;
+}
+.home{
+	border: none;
+	background: url(../image/home.png) no-repeat 50%;
+	background-size: auto 2.5rem;
+}
+.tip{
+	background: url(../image/tip.png) no-repeat 50%;
+	background-size: auto 2.5rem;
+}
+/*end footer*/
+/*main*/
+main{
+	margin: 5rem 0 7rem;
+}
+.result{
+	padding: 2rem 2rem 1rem;
+	background: @back;
+}
+.winer{
+	height: 16rem;
+	padding-top: 9.5rem;
+	text-align: center;
+	font-size: 3rem;
+	.bold;
+	color: #fff;
+	background: url(../image/win.png) no-repeat 50% 10%;
+	background-size: auto 13rem;
+}
+.win-tip{
+	margin: 1rem 0 2rem;
+	font-size: 2rem;
+	.bold;
+	color: @text1;
+}
+.result ul li{
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	color: #fff;
+	list-style: none;
+}
+.course{
+	padding: .5rem 2rem 1rem;
+
+	.bor-bot;
+}
+.course li{
+	list-style: none;
+	margin: .5rem 0;
+	font-size: 1.5rem;
+	color: @text2;
+}
+.main-top{
+	.flex;
+	justify-content: space-between;
+}
+.day{
+	font-size: 1.7rem;
+	.bold;
+	color: #000;
+}
+.time{
+	color: #d5d5d5;
+}
+/*end main*/
+/*footer*/
+footer{
+	.pos-fix;
+	bottom: 0;
+	left: 0;
+	.width;
+}
+.background{
+	.pos-re;
+	.width;
+	height: 7rem;
+	.footer-back;
+}
+.footer-btn{
+	.flex;
+	justify-content: space-around;
+	align-items: center;
+	.pos-abs;
+	top: 1rem;
+	.width;
+}
+.btn1,.btn2{
+	width: 40%;
+	margin: 0 1rem;
+	line-height: 5rem;
+	font-size: 2rem;
+	color: #fff;
+	.bor-radius;
+}
+.btn1{
+	background-color: @footer-btn1;
+	border: .1rem solid @footer-btn1;
+}
+.btn2{
+	background-color: @footer-btn2;
+	border: .1rem solid @footer-btn2;
+}
