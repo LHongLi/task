@@ -1,7 +1,9 @@
 
 //获取保存的参数
-var player = JSON.parse(sessionStorage.getItem("player"));
-var gameDay = parseInt(sessionStorage.getItem("day"));
+var player = JSON.parse(sessionStorage.getItem("player")),
+	gameDay = parseInt(sessionStorage.getItem("day")),
+	killNum = sessionStorage.getItem("killerNum"),
+ 	civilianNum = sessionStorage.getItem("civilianNum");
 // console.log(gameDay);
 
 //获取DOM
@@ -14,24 +16,22 @@ var btnBack = document.getElementsByClassName("back"),
 	cardNum = document.getElementsByClassName("num"),
 	killed = document.getElementsByClassName("kill");
 
-//点击事件
+//杀手未杀人传参
+var url = location.search,
+	str = url.substr(1);
+
+
+var notKill = null;
+var not = null;
+
+//页头按钮点击事件
 function backPage(){
 	window.location.href = "../html/deal.html";
 }
 function backHome(){
 	window.location.href = "../index.html";
 }
-function goGame(){
-	//点击之后赋值对象的死活状态
-	for(var i = 0; i < player.length; i++){
-		if(player[i].deathStyle !== null){
-			player[i].status = false;
-		}
-	}
-	var sava = JSON.stringify(player);
-	sessionStorage.setItem("player",sava);
-	window.location.href = "../html/process.html";
-}
+
 //创建HTML元素
 function element(){
 	var createEle = "<div class=cards><button class=con><input type=text  class=id readonly><p class=num>号</p><div class=kill></div></button></div>"
@@ -57,10 +57,8 @@ function voteSkip(){
 }
 //判断页面
 function page(){
-	var url = location.search;
-	var url = url.substr(1);
 	// 杀手杀人按钮跳转
-	if(url === "kill"){
+	if(str === "kill"){
 		killSkip();
 		// 游戏流程页面交互
 		for(var i = 0; i < player.length; i++){
@@ -71,22 +69,24 @@ function page(){
 					}else if(player[i].name === "杀手" ){
 						alert("快停火！是友军！");
 					}else{
-						$(".kill").hide();
-						killed[i].style.display = "block";
 						for(var j = 0; j < player.length; j++){
+							notKill = j;
 							if(player[j].status === true){
 								player[j].deathStyle = null;
 							}
+							$(".kill").hide();
+							killed[i].style.display = "block";
+							player[i].deathStyle = str;
 						}
-						player[i].deathStyle = url;
 					}
+					sessionStorage.setItem("notKill", notKill);
 				}
-
 			})(i);
 		}
-	}else if(url === "vote"){
+//投票按钮跳转
+	}else if(str === "vote"){
 		voteSkip();
-		// var processJudge = JSON.parse(sessionStorage.getItem("process"));
+		// 渲染被杀手杀死的人
 		for(var i = 0; i < player.length; i++){
 			if(player[i].status === false){
 				idCard[i].style.background = "#8ab09a";
@@ -96,18 +96,63 @@ function page(){
 					if(player[i].status !== true){
 						alert("你连尸体也有兴趣么？");
 					}else{
-						$(".kill").hide();
-						killed[i].style.display = "block";
 						for(var k = 0; k < player.length; k++){
+							not = k;
 							if(player[k].status === true){
 								player[k].deathStyle = null;
 							}
+							$(".kill").hide();
+							killed[i].style.display = "block";
+							player[i].deathStyle = str;
 						}
-						player[i].deathStyle = url;
 					}
+					sessionStorage.setItem("not", not);
 				}
 			})(i)
 		}
 	}
 }
 page();
+
+//判断胜者
+function winner(){
+	var kill
+}
+//开始游戏、杀人、投票按钮点击事件
+function goGame(){
+	//点击之后赋值对象的死活状态
+	if(str === "kill"){
+		for(var i = 0; i < player.length; i++){
+			//判断是否有人被杀
+			if(notKill !== null){
+				for(var j = 0; j < player.length; j++){
+					if(player[j].deathStyle === "kill"){
+						player[j].status = false;
+
+						player[j].deathDay = gameDay;
+						window.location.href = "../html/process.html?kill";
+					}
+				}
+			}else{
+				window.location.href = "../html/process.html?nokill";
+				sessionStorage.setItem("notKill",notKill);
+			}
+		}
+	}else if(str === "vote"){
+			if(not !== null){
+				for(var j = 0; j < player.length; j++){
+					if(player[j].deathStyle === "vote"){
+						player[j].status = false;
+						player[j].deathDay = gameDay;
+						window.location.href = "../html/process.html?vote";
+					}
+				}
+			}else{
+				alert("必须投票");
+			}
+	}else{
+		window.location.href = "../html/process.html";
+	}
+	var sava = JSON.stringify(player);
+	sessionStorage.setItem("player",sava);
+}

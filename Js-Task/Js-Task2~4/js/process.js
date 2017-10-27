@@ -17,9 +17,12 @@ var day = document.getElementById("gameDay"),
 	voteName = document.getElementById("votename");
 
 //获取本地数据
-var player = JSON.parse(sessionStorage.getItem("player"));
-var	gameDay = parseInt(sessionStorage.getItem("day"));
-
+var player = JSON.parse(sessionStorage.getItem("player")),
+	gameDay = parseInt(sessionStorage.getItem("day")),
+ 	killNum = sessionStorage.getItem("killerNum"),
+ 	civilianNum = sessionStorage.getItem("civilianNum"),
+	notKill = sessionStorage.getItem("notKill");
+	not = sessionStorage.getItem("not");
 //判断按钮点击顺序
 var order = parseInt(sessionStorage.getItem("order"));
 //header按钮点击事件
@@ -67,7 +70,6 @@ kill.onclick = function(){
 		alert("请点击下一步");
 	}
 	sessionStorage.setItem("order",order);
-	console.log(order);
 }
 //亡灵发表遗言
 word.onclick = function(){
@@ -79,7 +81,6 @@ word.onclick = function(){
 	}else{
 		alert("请点击下一步");
 	}
-	console.log(order);
 }
 //玩家依次发言
 talk.onclick = function(){
@@ -91,7 +92,6 @@ talk.onclick = function(){
 	}else{
 		alert("请点击下一步");
 	}
-	console.log(order);
 }
 //全民投票
 vote.onclick = function(){
@@ -103,42 +103,63 @@ vote.onclick = function(){
 	}else{
 		alert("请点击下一步");
 	}
-	console.log(order);
 };
+
 //游戏天数
 (function(){
 	day.innerHTML = gameDay;
 })();
-//返回信息
+
+///杀人、投票页面返回信息
+var url = location.search;
+var str = url.substr(1);
 function pageBack(){
-	for(var i = 0; i < player.length; i++){
-		if(player[i].deathStyle === "kill"){
-			kill.style.background = "#868686";
-			killSJ.className = "change";
-			killMess.style.display = "block";
-			killedNum.innerHTML = player[i].num;
-			killedName.innerHTML = player[i].name;
-			navLogo[0].style.top = "5rem";
-		}else if(player[i].deathStyle !== null){
-			kill.style.background = "#868686";
-			killSJ.className = "change";
-			word.style.background = "#868686";
-			wordSJ.className = "change";
-			talk.style.background = "#868686";
-			talkSJ.className = "change";
-			vote.style.background = "#868686";
-			voteSJ.className = "change";
-			voteMess.style.display = "block";
-			killMess.style.display = "block";
-			navLogo[0].style.top = "5rem";
-			if(player[i].deathStyle === "vote"){
-				voteNum.innerHTML = player[i].num;
-				voteName.innerHTML = player[i].name;
-			}else if(player[i].deathStyle === "kill"){
-				killedNum.innerHTML = player[i].num;
-				killedName.innerHTML = player[i].name;
-			}
-		}
-	}
+	if(str === "kill"){
+	   for(var i = 0; i < player.length; i++){
+		   if(player[i].deathStyle === "kill"){
+			   kill.style.background = "#868686";
+			   killSJ.className = "change";
+			   killMess.style.display = "block";
+			   killedNum.innerHTML = player[i].num;
+			   killedName.innerHTML = player[i].name;
+			   navLogo[0].style.top = "5rem";
+		   }
+	   }
+   }else if(str === "nokill"){
+		kill.style.background = "#868686";
+		killSJ.className = "change";
+		killMess.style.display = "block";
+		killMess.innerHTML = "杀手未杀人。";
+		navLogo[0].style.top = "5rem";
+	}else if(str === "vote"){
+	   for(var i = 0; i < player.length; i++){
+		   kill.style.background = "#868686";
+		   killSJ.className = "change";
+		   word.style.background = "#868686";
+		   wordSJ.className = "change";
+		   talk.style.background = "#868686";
+		   talkSJ.className = "change";
+		   vote.style.background = "#868686";
+		   voteSJ.className = "change";
+		   voteMess.style.display = "block";
+		   killMess.style.display = "block";
+		   navLogo[0].style.top = "5rem";
+		   if(notKill === "null"){
+			   killMess.innerHTML = "杀手未杀人。";
+			   if(player[i].deathStyle === "vote"){
+				   voteNum.innerHTML = player[i].num;
+				   voteName.innerHTML = player[i].name;
+			   }
+		   }else if(not !=="null"){
+			   if(player[i].deathStyle === "vote"){
+				   voteNum.innerHTML = player[i].num;
+				   voteName.innerHTML = player[i].name;
+			   }else if(player[i].deathStyle === "kill"){
+				   killedNum.innerHTML = player[i].num;
+				   killedName.innerHTML = player[i].name;
+			   }
+		   }
+	   }
+   }
 }
 pageBack();

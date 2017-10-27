@@ -57,6 +57,7 @@ function allorCards(){
 		obj.name = cards[i];
 		obj.status = true;
 		obj.deathStyle = null;
+		obj.deathDay = 0;
 		obj.num = i+1;
 		PLAYOBJ[i] = obj;
 	}
