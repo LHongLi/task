@@ -59,6 +59,7 @@ function allorCards(){
 		obj.deathStyle = null;
 		obj.deathDay = 0;
 		obj.num = i+1;
+		obj.click = 0;
 		PLAYOBJ[i] = obj;
 	}
 	//保存参数

@@ -2,8 +2,9 @@
 //获取保存的参数
 var player = JSON.parse(sessionStorage.getItem("player")),
 	gameDay = parseInt(sessionStorage.getItem("day")),
-	killNum = sessionStorage.getItem("killerNum"),
- 	civilianNum = sessionStorage.getItem("civilianNum");
+	killNum = parseInt(sessionStorage.getItem("killerNum")),
+ 	civilianNum = parseInt(sessionStorage.getItem("civilianNum")),
+	playerNum = killNum + civilianNum;
 // console.log(gameDay);
 
 //获取DOM
@@ -43,6 +44,7 @@ function element(){
 	}
 }
 element();
+
 //杀手杀人页头
 function killSkip(){
 	var killPage = "<div class=tip><p class=top>杀手请睁眼，杀手请选择要杀的对象</p><div class=downsj></div><p class=bot>点击下方玩家头像，对被杀的玩家进行标记</p></div>";
@@ -62,6 +64,9 @@ function page(){
 		killSkip();
 		// 游戏流程页面交互
 		for(var i = 0; i < player.length; i++){
+			if(player[i].status === false){
+				idCard[i].style.background = "#8ab09a";
+			}
 			(function(i){
 				idCard[i].onclick = function(){
 					if(player[i].status !== true){
@@ -75,8 +80,10 @@ function page(){
 								player[j].deathStyle = null;
 							}
 							$(".kill").hide();
+							player[j].click = 0;
 							killed[i].style.display = "block";
 							player[i].deathStyle = str;
+							player[i].click = 1;
 						}
 					}
 					sessionStorage.setItem("notKill", notKill);
@@ -102,22 +109,40 @@ function page(){
 								player[k].deathStyle = null;
 							}
 							$(".kill").hide();
+							player[k].click = 0;
 							killed[i].style.display = "block";
 							player[i].deathStyle = str;
+							player[i].click = 1;
 						}
 					}
 					sessionStorage.setItem("not", not);
 				}
 			})(i)
 		}
+	}else if(str === "log"){
+		for(var i = 0; i < player.length; i++){
+			if(player[i].status === false){
+				idCard[i].style.background = "#8ab09a";
+			}
+		}
 	}
 }
 page();
 
-//判断胜者
+//计算活着的人数量
+var $killerNum = killNum,
+	$civilianNum = civilianNum;
 function winner(){
-	var kill
+	for(var i = 0; i < player.length; i++){
+		if(player[i].name === "杀手" && player[i].status !== true){
+			$killerNum --;
+		}
+		if(player[i].name === "平民" && player[i].status !== true){
+			$civilianNum --;
+		}
+	}
 }
+
 //开始游戏、杀人、投票按钮点击事件
 function goGame(){
 	//点击之后赋值对象的死活状态
@@ -126,29 +151,50 @@ function goGame(){
 			//判断是否有人被杀
 			if(notKill !== null){
 				for(var j = 0; j < player.length; j++){
-					if(player[j].deathStyle === "kill"){
+					if(player[j].click === 1){
 						player[j].status = false;
-
 						player[j].deathDay = gameDay;
-						window.location.href = "../html/process.html?kill";
+						player[i].click = 0;
 					}
 				}
+				window.location.href = "../html/process.html?kill";
 			}else{
 				window.location.href = "../html/process.html?nokill";
 				sessionStorage.setItem("notKill",notKill);
 			}
 		}
+		winner();
+		if($killerNum === $civilianNum){
+			sessionStorage.setItem("winner" , "杀手" );
+			window.location.href = "../html/winner.html";
+		}
+		//投票确认
 	}else if(str === "vote"){
 			if(not !== null){
 				for(var j = 0; j < player.length; j++){
-					if(player[j].deathStyle === "vote"){
+					if(player[j].click === 1){
 						player[j].status = false;
 						player[j].deathDay = gameDay;
-						window.location.href = "../html/process.html?vote";
+						player[j].click = 0;
 					}
 				}
+				var days = gameDay+1;
+				sessionStorage.setItem("day",days);
+				window.location.href = "../html/process.html?vote";
 			}else{
 				alert("必须投票");
+			}
+			winner();
+			if($killerNum === $civilianNum){
+				sessionStorage.setItem("winner" , "杀手" );
+				window.location.href = "../html/winner.html";
+				var days = gameDay;
+				sessionStorage.setItem("day",days);
+			}else if($killerNum === 0){
+				sessionStorage.setItem("winner" , "平民" );
+				window.location.href = "../html/winner.html";
+				var days = gameDay;
+				sessionStorage.setItem("day",days);
 			}
 	}else{
 		window.location.href = "../html/process.html";

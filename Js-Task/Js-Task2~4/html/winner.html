@@ -7,37 +7,32 @@
 	</head>
 	<body>
 		<header>
-			<button  class="home"></button>
+			<button  class="home" onclick="backHome()"></button>
 			游戏结果
 			<a href="#" class="tip"></a>
 		</header>
 		<main>
 			<div class="result">
-				<div class="winer">胜利</div>
-				<p class="win-tip">太棒了！你知道么？在杀人游戏中只有20%的<b id="name"></b>取得游戏最终的胜利哦！</p>
+				<div class="winer"><b id="winner"></b>胜利</div>
+				<p class="win-tip">太棒了！你知道么？在杀人游戏中只有20%的<b id="winnerTip"></b>取得游戏最终的胜利哦！</p>
 				<ul>
 					<li>本次游戏共计用时0小时25分钟</li>
-					<li>杀&emsp;手 <b id="killerNum">0</b> 人&emsp;
-						平&emsp;民 <b id="civilianNum">0</b> 人</li>
+					<li id="playerNum"></li>
 					<li>卧底词汇: 爱新觉罗</li>
 					<li>水民词汇: 努尔哈赤</li>
 				</ul>
 			</div>
-			<ul class="course">
-				<li class="main-top">
-					<p class="day">第天</p>
-					<p class="time">0小时07分</p>
-				</li>
-				<li>晚上：号被杀死，号是</li>
-				<li>白天：号被全民 投票投死，号是</li>
-			</ul>
+			<div class="mark"></div>
+			<ul></ul>
 		</main>
 		<footer>
 			<div class="background"></div>
 			<div class="footer-btn">
-				<button class="btn1">再来一局</button>
+				<button class="btn1" onclick="again()">再来一局</button>
 				<button class="btn2">上传并分享</button>
 			</div>
 		</footer>
+		<script src="../jQuery/jquery-3.2.1.js"></script>
+		<script src="../js/winner.js"></script>
 	</body>
 </html>

@@ -92,6 +92,9 @@ body {
   color: #24a7c6;
   background-color: #fff;
 }
+.bot {
+  margin-bottom: 11rem;
+}
 .process {
   display: flex;
   width: 98.6%;
@@ -111,7 +114,7 @@ body {
   width: 0;
   border: 1rem solid transparent;
   border-bottom: 1rem solid #fff;
-  top: -2.05rem;
+  top: -2rem;
   left: 50%;
   margin-left: -1rem;
 }
@@ -190,11 +193,14 @@ body {
   line-height: 2.75rem;
   display: none;
 }
-.process .list .message .dc {
-  color: red;
+.process .list .messII {
+  display: block;
 }
 .process .list .nomar {
   margin: 0;
+}
+.process .list .reset {
+  background: #868686;
 }
 .footer {
   justify-content: space-around;
