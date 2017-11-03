@@ -62,7 +62,9 @@ $(document).ready(function(){
 				}else if(data.code === -5004){
 					$(".log_in").before("<p class=error>"+data.message+"</p>");
 				}else if(data.code === 0){
-					window.location.href = "/carrots-admin-ajax/";
+					var name = JSON.stringify(account.value);
+					sessionStorage.setItem("name",name);
+					window.location.href = "../html/backstage.html";
 				}
 			}
 		})
