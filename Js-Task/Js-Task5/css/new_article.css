@@ -1,0 +1,39 @@
+.create_new_article {
+  margin: .3rem;
+  border: .01rem solid #ccc;
+  border-radius: 5px;
+}
+.create_new_article p {
+  padding: .2rem;
+  width: 100%;
+  font-weight: bold;
+  border-bottom: .01rem solid #ccc;
+}
+.create_new_article .new_article_mess {
+  padding: .1rem 20% .2rem 0;
+  font-size: .15rem;
+}
+.create_new_article select {
+  width: 25%;
+}
+.create_new_article input,
+.create_new_article select,
+.create_new_article button {
+  margin-top: .035rem;
+}
+.create_new_article table {
+  width: 80%;
+  font-size: .15rem;
+  border-bottom: .02rem solid #ccc;
+}
+.create_new_article table th {
+  text-align: center;
+}
+.img_preview {
+  width: 8%;
+  font-size: .07rem;
+}
+.bot_btn {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+}
+.form_top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: .2rem;
+  padding: .2rem .3rem;
+  font-size: .17rem;
+  border: .01rem solid #ccc;
+  border-radius: 5px;
+}
+.form_top b {
+  margin: 0 .3rem 0 0;
+}
+.form_top input,
+.form_top select {
+  flex: 1;
+}
+.form_top .form_1 {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+.form_top .form_1 .line {
+  margin: 0 .25rem;
+  width: .2rem;
+  height: 0;
+  border: .02rem solid #000;
+  border-radius: 5px;
+}
+.form_top .form_2 {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.form_top .mar-left {
+  margin-left: .15rem;
+}
+.form_top .form_3 {
+  display: flex;
+  width: 36%;
+}
+.form_top .form_3 .mar-top {
+  margin-top: .2rem;
+}
+.form_top .form_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: .2rem;
+  width: 100%;
+}
+.form_top .form_btn .mar-right {
+  margin-right: .1rem;
+}
+.form_list {
+  margin: .2rem;
+  border: .01rem solid #ccc;
+  border-radius: 5px;
+}
+.form_list .form_list_title {
+  display: flex;
+  justify-content: space-between;
+  padding: .2rem;
+  width: 100%;
+  border-bottom: .01rem solid #ccc;
+}
+.form_list .form_list_main {
+  margin: .2rem;
+  font-size: .15rem;
+  border: .01rem solid #ccc;
+}
+.form_list .form_list_main table {
+  margin-bottom: .1rem;
+}
+.form_list .form_list_main table th,
+.form_list .form_list_main table tr,
+.form_list .form_list_main table td {
+  text-align: center;
+}
+.form_list .nav_page {
+  position: relative;
+  top: 15px;
+}
+.form_list .nav_page ul {
+  position: absolute;
+  right: 20px;
+  margin: 0;
+}

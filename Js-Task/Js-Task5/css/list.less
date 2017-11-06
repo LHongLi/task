@@ -1,0 +1,90 @@
+//out:list.css
+//main:ture
+
+*{
+	margin: 0;
+}
+.form_top{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: .2rem;
+	padding: .2rem .3rem;
+	font-size: .17rem;
+	border: .01rem solid #ccc;
+	border-radius: 5px;
+	b{
+		margin: 0 .3rem 0 0;
+	}
+	input,select{
+			flex: 1;
+	}
+	.form_1{
+		display: flex;
+		align-items: center;
+		width: 70%;
+		.line{
+			margin: 0 .25rem;
+			width: .2rem;
+			height: 0;
+			border: .02rem solid #000;
+			border-radius: 5px;
+		}
+	}
+	.form_2{
+		display: flex;
+		align-items: center;
+		width: 30%;
+	}
+	.mar-left{
+		margin-left: .15rem;
+	}
+	.form_3{
+		display: flex;
+		width: 36%;
+		.mar-top{
+			margin-top: .2rem;
+		}
+	}
+	.form_btn{
+		display: flex;
+		justify-content: flex-end;
+		margin-top: .2rem;
+		width: 100%;
+		.mar-right{
+			margin-right: .1rem;
+		}
+	}
+}
+.form_list{
+	margin: .2rem;
+	border: .01rem solid #ccc;
+	border-radius: 5px;
+	.form_list_title{
+		display: flex;
+		justify-content: space-between;
+		padding: .2rem;
+		width: 100%;
+		border-bottom: .01rem solid #ccc;
+	}
+	.form_list_main{
+		margin: .2rem;
+		font-size: .15rem;
+		border: .01rem solid #ccc;
+		table{
+			margin-bottom: .1rem;
+			th,tr,td{
+				text-align: center;
+			}
+		}
+	}
+	.nav_page{
+		position: relative;
+		top: 15px;
+		ul{
+			position: absolute;
+			right: 20px;
+			margin: 0;
+		}
+	}
+}

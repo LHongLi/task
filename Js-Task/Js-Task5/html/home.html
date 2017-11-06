@@ -1,0 +1,54 @@
+
+<div class="nav" data-ng-controller="nav">
+	<div class="top_title">NoGameNoLife后台管理系统</div>
+	<ul>
+		<li id="mgt_ifm">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>信息管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+		<li id="mgt_article">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>Article管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+		<li class="son">
+			<a data-ui-sref="home.article">Article列表</a>
+		</li>
+		<li id="mgt_talent">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>人才管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+		<li id="mgt_rcmd">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>推荐管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+		<li id="mgt_stage">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>后台管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+		<li id="mgt_user">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>用户管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+		<li id="mgt_content">
+			<i class="glyphicon glyphicon-pencil"></i>
+			<p>内容管理</p>
+			<i class="glyphicon glyphicon-menu-left"></i>
+		</li>
+	</ul>
+</div>
+<div class="main">
+	<div class="main_top_link">
+		<a href="#">猎头</a>
+		<a href="#">user</a>
+		<a href="#" class="bor-none c_black"><i class="glyphicon glyphicon-off"></i></a>
+	</div>
+	<div data-ui-view>
+		<h1>Welcome!&nbsp;{{name}}</h1>
+	</div>
+</div>

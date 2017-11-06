@@ -56,6 +56,7 @@ $(document).ready(function(){
 			dataType: "json",
 			//请求头部信息
 			beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');},
+			//当成功的从服务器返回信息后执行的操作，只要返回就执行
 			success:function(data){
 				if(data.code === -5003){
 					$(".log_in").before("<p class=error>"+data.message+"</p>");
@@ -64,7 +65,7 @@ $(document).ready(function(){
 				}else if(data.code === 0){
 					var name = JSON.stringify(account.value);
 					sessionStorage.setItem("name",name);
-					window.location.href = "../html/backstage.html";
+					window.location.href = "html/backstage.html";
 				}
 			}
 		})
