@@ -9,9 +9,10 @@ var myApp = angular.module("myApp" , ["ui.router","ui.bootstrap"])
 			})
 			.state("home.article",{
 				params:{
-					page:null
+					page:null,
+					size:null
 				},
-				url: "/article?page",
+				url: "/article?page&size",
 				templateUrl: "../html/list.html"
 			})
 			.state("home.newArticle",{

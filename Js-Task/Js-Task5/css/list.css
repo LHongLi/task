@@ -62,24 +62,13 @@
   border: .01rem solid #ccc;
   border-radius: 5px;
 }
-.form_list nav {
-  position: relative;
-}
-.form_list nav .list_pages {
-  position: absolute;
-  top: .05rem;
-  left: -1.05rem;
-  font-size: .08rem;
-}
-.form_list nav .list_pages input {
+.form_list nav ul li a input {
+  margin: 0 .01rem;
   width: .2rem;
-}
-.form_list nav .jump_pages {
-  padding-bottom: .05rem;
-  font-size: .08rem;
-}
-.form_list nav .jump_pages input {
-  width: .2rem;
+  height: .18rem;
+  border: .01rem solid #ddd;
+  text-align: center;
+  color: #337ab7;
 }
 .form_list .form_list_title {
   display: flex;

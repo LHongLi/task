@@ -24,19 +24,19 @@
 		<b class="mar-left">类&emsp;&emsp;型</b>
 		<select class="form-control">
 			<option>
-				<a href="#">全部</a>
+				<a href="">全部</a>
 			</option>
 			<option>
-				<a href="#">首页Banner</a>
+				<a href="">首页Banner</a>
 			</option>
 			<option>
-				<a href="#">找职位Banner</a>
+				<a href="">找职位Banner</a>
 			</option>
 			<option>
-				<a href="#">找精英Banner</a>
+				<a href="">找精英Banner</a>
 			</option>
 			<option>
-				<a href="#">行业大图</a>
+				<a href="">行业大图</a>
 			</option>
 		</select>
 	</div>
@@ -44,13 +44,13 @@
 		<b class="mar-top">状&emsp;&emsp;态</b>
 		<select class="form-control mar-top">
 			<option>
-				<a href="#">全部</a>
+				<a href="">全部</a>
 			</option>
 			<option>
-				<a href="#">上线</a>
+				<a href="">上线</a>
 			</option>
 			<option>
-				<a href="#">草稿</a>
+				<a href="">草稿</a>
 			</option>
 		</select>
 	</div>
@@ -78,44 +78,49 @@
 				<th>状态</th>
 				<th>操作</th>
 			</tr>
-			<tr ng-repeat="x in lists.articleList">
+			<tr ng-repeat="x in lists.articleList ">
 				<td>{{x.id}}</td>
 				<td>{{x.title}}</td>
-				<td>{{x.type}}</td>
-				<td>{{x.createAt}}</td>
-				<td>{{x.updateAt}}</td>
+				<td>{{x.type | type}}</td>
+				<td>{{x.createAt | date : "yyyy/MM/dd HH:mm:ss"}}</td>
+				<td>{{x.updateAt | date : "yyyy/MM/dd HH:mm:ss"}}</td>
 				<td>{{x.author}}</td>
-				<td>{{x.status}}</td>
+				<td>{{x.status | status}}</td>
 				<td>
-					<a href="#">下线</a>&emsp;
-					<a href="#">编辑</a>&emsp;
-					<a href="#">删除</a>
+					<a href="">下线</a>&nbsp;
+					<a href="">编辑</a>&nbsp;
+					<a href="">删除</a>
 				</td>
 			</tr>
 		</table>
 	</div>
 	<nav aria-label="Page navigation" class="nav_page" ng-controller="myList">
 	  	<ul class="pagination pagination-sm">
-			<li class="list_pages">
-				显示<input type="text" value="10"/>条
-				<button type="button" name="button">显示</button>
+			<li>
+				<a>显示<input type="text" ng-model="disSize" ng-focus="disSize = '' "/>条
+					/
+					共<b style="color:red;line-height:1.5">{{total}}</b>条
+				</a>
 			</li>
-		    <li>
-		      <a href="" aria-label="Previous">
-		        <span aria-hidden="true">&laquo;</span>
-		      </a>
+			<li><a href="" ng-click = "sizeMod()">确定</a></li>
+		    <li><a href="" ng-click = "pageHome()">首页</a></li>
+			<li >
+		    	<a  ng-click="prePage()" href="">
+		    		<span aria-hidden="true">&laquo;</span>上一页
+		      	</a>
 		    </li>
 		    <li ng-repeat="x in pages" >
-				<a ng-click="page_x(x)" href="">{{x}}</a>
+				<a ng-click="pageJump(x)" href="">{{x}}</a>
 			</li>
-		    <li>
-		      <a href="" aria-label="Next">
-		        <span aria-hidden="true">&raquo;</span>
-		      </a>
+			<li ng-click="nextPage()">
+		    	<a href="" >
+					下一页<span aria-hidden="true">&raquo;</span>
+		    	</a>
 		    </li>
-			<li class="jump_pages">
-				去第<input type="text" />页
-				<button type="button" name="button">跳转</button>
+		    <li><a href="" ng-click = "pageEnd()">尾页</a></li>
+			<li>
+				<a>跳转至<input type="text" ng-model="pageJump" ng-focus="pageJump = ''  "/>页</a>
+				<a href="" ng-click="pageGo()">跳转</a>
 			</li>
 	  	</ul>
 	</nav>
