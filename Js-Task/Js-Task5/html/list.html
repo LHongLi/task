@@ -2,26 +2,56 @@
 <div class="form_top">
 	<div class="form_1">
 		<b>发布时间</b>
-		<input type="text" class="form-control">
+		<div ng-controller="myDate" class="date_form">
+			<input type="text" class="date_list form-control" uib-datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" ng-required="true" close-text="关闭" clear-text="清空" current-text="今天" alt-input-formats="altInputFormats" />
+			<div class="input-group-btn" style="width:auto;">
+				<button type="button" class="btn btn-default" ng-click="open1()">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</button>
+			</div>
+		</div>
 		<div class="line"></div>
-		<input type="text" class="form-control">
+		<div ng-controller="myDate" class="date_form">
+			<input type="text" class="date_list form-control" uib-datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" ng-required="true" close-text="关闭" clear-text="清空" current-text="今天" alt-input-formats="altInputFormats" />
+			<div class="input-group-btn" style="width:auto;">
+				<button type="button" class="btn btn-default" ng-click="open1()">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</button>
+			</div>
+		</div>
 	</div>
 	<div class="form_2">
 		<b class="mar-left">类&emsp;&emsp;型</b>
 		<select class="form-control">
-			<option>全部</option>
-			<option>大概</option>
-			<option>可能</option>
-			<option>也许</option>
+			<option>
+				<a href="#">全部</a>
+			</option>
+			<option>
+				<a href="#">首页Banner</a>
+			</option>
+			<option>
+				<a href="#">找职位Banner</a>
+			</option>
+			<option>
+				<a href="#">找精英Banner</a>
+			</option>
+			<option>
+				<a href="#">行业大图</a>
+			</option>
 		</select>
 	</div>
 	<div class="form_3">
 		<b class="mar-top">状&emsp;&emsp;态</b>
 		<select class="form-control mar-top">
-			<option>全部</option>
-			<option>大概</option>
-			<option>可能</option>
-			<option>也许</option>
+			<option>
+				<a href="#">全部</a>
+			</option>
+			<option>
+				<a href="#">上线</a>
+			</option>
+			<option>
+				<a href="#">草稿</a>
+			</option>
 		</select>
 	</div>
 	<div class="form_btn">
@@ -48,7 +78,7 @@
 				<th>状态</th>
 				<th>操作</th>
 			</tr>
-			<tr ng-repeat="x in lists">
+			<tr ng-repeat="x in lists.articleList">
 				<td>{{x.id}}</td>
 				<td>{{x.title}}</td>
 				<td>{{x.type}}</td>
@@ -64,23 +94,29 @@
 			</tr>
 		</table>
 	</div>
-	<nav aria-label="Page navigation" class="nav_page">
+	<nav aria-label="Page navigation" class="nav_page" ng-controller="myList">
 	  	<ul class="pagination pagination-sm">
+			<li class="list_pages">
+				显示<input type="text" value="10"/>条
+				<button type="button" name="button">显示</button>
+			</li>
 		    <li>
-		      <a href="#" aria-label="Previous">
+		      <a href="" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		      </a>
 		    </li>
-		    <li><a href="#">1</a></li>
-		    <li><a href="#">2</a></li>
-		    <li><a href="#">3</a></li>
-		    <li><a href="#">4</a></li>
-		    <li><a href="#">5</a></li>
+		    <li ng-repeat="x in pages" >
+				<a ng-click="page_x(x)" href="">{{x}}</a>
+			</li>
 		    <li>
-		      <a href="#" aria-label="Next">
+		      <a href="" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		      </a>
 		    </li>
+			<li class="jump_pages">
+				去第<input type="text" />页
+				<button type="button" name="button">跳转</button>
+			</li>
 	  	</ul>
 	</nav>
 </div>

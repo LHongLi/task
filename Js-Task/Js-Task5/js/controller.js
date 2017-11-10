@@ -4,6 +4,7 @@ angular.module("myApp").controller('myCtrl' , function($scope){
 		$scope.name = 'Master';
 	}
 });
+//侧边栏点击时,Atricle列表向左箭头变换并展开Atricle子列表
 angular.module("myApp").controller('nav' , function($scope){
 	$("#mgt_article").click(function(){
 		$(".son").slideToggle();

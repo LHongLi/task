@@ -16,15 +16,19 @@
 	b{
 		margin: 0 .3rem 0 0;
 	}
-	input,select{
+	select{
 			flex: 1;
 	}
 	.form_1{
 		display: flex;
 		align-items: center;
 		width: 70%;
+		.date_form{
+			display: flex;
+			width: 33.5%;
+		}
 		.line{
-			margin: 0 .25rem;
+			margin: 0 .5rem;
 			width: .2rem;
 			height: 0;
 			border: .02rem solid #000;
@@ -41,7 +45,7 @@
 	}
 	.form_3{
 		display: flex;
-		width: 36%;
+		width: 30%;
 		.mar-top{
 			margin-top: .2rem;
 		}
@@ -60,6 +64,25 @@
 	margin: .2rem;
 	border: .01rem solid #ccc;
 	border-radius: 5px;
+	nav{
+		position: relative;
+		.list_pages{
+			position: absolute;
+			top: .05rem;
+			left: -1.05rem;
+			font-size: .08rem;
+			input{
+				width: .2rem;
+			}
+		}
+		.jump_pages{
+			padding-bottom: .05rem;
+			font-size: .08rem;
+			input{
+				width: .2rem;
+			}
+		}
+	}
 	.form_list_title{
 		display: flex;
 		justify-content: space-between;
