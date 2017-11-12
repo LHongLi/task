@@ -10,9 +10,13 @@ var myApp = angular.module("myApp" , ["ui.router","ui.bootstrap"])
 			.state("home.article",{
 				params:{
 					page:null,
-					size:null
+					size: null,
+					type: null,
+					status: null,
+					starAt: null,
+					endAt: null
 				},
-				url: "/article?page&size",
+				url: "/article?page&size&type&status&startAt&endAt",
 				templateUrl: "../html/list.html"
 			})
 			.state("home.newArticle",{

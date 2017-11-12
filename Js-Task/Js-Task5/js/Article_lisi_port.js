@@ -1,13 +1,75 @@
-//定义发布时间的日期空间
-angular.module("myApp").controller("myDate",function($scope){
-             $scope.format = "yyyy/MM/dd";
-             $scope.altInputFormats = ['yyyy/M!/d!'];
-             $scope.popup1 = {
-                 opened: false
-             };
-             $scope.open1 = function () {
-                 $scope.popup1.opened = true;
-             };
+//列表筛选
+angular.module("myApp").controller("formTop", function ($scope, $http, $state, $stateParams) {
+	//日期选择
+	$scope.format = "yyyy/MM/dd";
+	$scope.altInputFormats = ['yyyy/M!/d!'];
+	$scope.popup1 = {	//开始日期
+		opened: false
+	};
+	$scope.popup2 = {	//结束时间
+		opened: false
+	};
+	$scope.open1 = function () {	//开始日期
+		$scope.popup1.opened = true;
+	};
+	$scope.open2 = function () {	//结束时间
+		$scope.popup2.opened = true;
+	};
+
+	//类型下拉框
+	$scope.typeLists = [{ id: null, name: "全部" },{ id: "0", name: "首页Banner" },{ id: "2", name: "找精英Banner" },{ id: "1", name: "找职位Banner" },{ id: "3", name: "行业大图" }];
+
+	//状态下拉框
+	$scope.statusLists = [{ id: null, name: "全部" },{ id: "1", name: "草稿" },{ id: "2", name: "上线" }];
+	
+	//格式化类型/状态
+	$scope.typeUrl = $stateParams.type;
+	$scope.statusUrl = $stateParams.status;
+	if ($stateParams.startAt !== undefined & $stateParams.endAt !== undefined) {
+		var start = $stateParams.startAt;
+		start = new Date(parseInt(start));
+		$scope.startDate = start;
+		var end = $stateParams.endAt;
+		end = new Date(parseInt(end));
+		$scope.endDate = end;
+	}
+	//搜索
+	$scope.search = function () {
+		if ($scope.startDate !== undefined & $scope.endDate !== undefined) {
+			var start = new Date($scope.startDate);
+			$scope.startAt = start.getTime();
+			var end = new Date($scope.endDate);
+			$scope.endAt = end.getTime(); 
+			$state.go("home.article", {
+				page: 1,
+				type: $scope.typeUrl,
+				status: $scope.statusUrl,
+				startAt: $scope.startAt,
+				endAt: $scope.endAt
+			})
+		} else if ($scope.startAt === undefined & $scope.endAt === undefined){
+			$state.go("home.article", {
+				page: 1,
+				type: $scope.typeUrl,
+				status: $scope.statusUrl
+			})
+		}
+	}
+
+	//清空
+	$scope.reset = function () {
+		$scope.typeUrl = null;
+		$scope.statusUrl = null;
+		$scope.startAt = null;
+		$scope.endAt = null;
+		$state.go("home.article", {
+			page: 1,
+			type: $scope.typeUrl,
+			status: $scope.statusUrl,
+			startAt: $scope.startAt,
+			endAt: $scope.endAt
+		})
+	};
 });
 //获取后台信息
 angular.module("myApp").controller("myList",function($scope,$http,$state,$stateParams){
@@ -16,18 +78,25 @@ angular.module("myApp").controller("myList",function($scope,$http,$state,$stateP
 		method:"get",
 		url:"/carrots-admin-ajax/a/article/search",
 		params: {
-			size:$stateParams.size,
-			page: $stateParams.page
+			size: $stateParams.size,
+			page: $stateParams.page,
+			status: $stateParams.status,
+			type: $stateParams.type,
+			startAt: $stateParams.startAt,
+			endAt: $stateParams.endAt
 		}
-	}).then(function(response){
+	}).then(function (response) {
+		//获取所有信息
 		$scope.lists = response.data.data;
+
 		//最大条数
 		$scope.total = $scope.lists.total;
 		$scope.size = $scope.lists.size;
+
 		//获取总页数
 		var pages = new Array();
 		var page = Math.ceil($scope.lists.total/$scope.lists.size);
-		$scope.maxPage = page; //最大页数
+		$scope.maxPage = page;	//最大页数
 		for(var i = 0; i < page; i++){
 			pages.push(i+1);
 		}
@@ -35,7 +104,7 @@ angular.module("myApp").controller("myList",function($scope,$http,$state,$stateP
 	});
 
 	//点击页码跳转
-	$scope.pageJump = function(x){
+	$scope.pageNum = function(x){
 		$scope.page = x;
 		$state.go("home.article",{page:x})
 	};
@@ -83,6 +152,7 @@ angular.module("myApp").controller("myList",function($scope,$http,$state,$stateP
 	$scope.sizeMod = function(){
 		$state.go("home.article",{size:$scope.disSize})
 	};
+
 });
 
 //转化类型和状态的含义
