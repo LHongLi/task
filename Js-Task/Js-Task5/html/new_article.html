@@ -3,72 +3,95 @@
 	<div class="new_article_mess">
 		<form class="form-horizontal">
 
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">标题名称</label>
-				<div class="col-sm-10">
-      				<input type="text" class="form-control" >
-    			</div>
-			</div>
-
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">类&emsp;&emsp;型</label>
-				<div class="col-sm-10">
-					<select class="form-control">
-						<option>请选择</option>
-						<option>aaa</option>
-						<option>bbb</option>
-						<option>ccc</option>
-					</select>
-    			</div>
-			</div>
-
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">说&emsp;&emsp;明</label>
-				<div class="col-sm-10">
-      				<input type="text" class="form-control" >
-    			</div>
-			</div>
-
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">跳转链接</label>
-				<div class="col-sm-10">
-      				<input type="text" class="form-control" >
-    			</div>
-			</div>
-
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">配&emsp;&emsp;图</label>
-				<div class="col-sm-10">
-      				<button type="button" class="btn btn-primary">选择文件</button>
-					<br>
-					<input type="text" placeholder="配图预览" class="img_preview" readonly>
-    			</div>
-			</div>
-
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">&emsp;&emsp;&emsp;&emsp;</label>
-				<div class="col-sm-10">
-					<table class="table">
-						<tr>
-							<th>图片名</th>
-							<th>文件大小</th>
-							<th>进度</th>
-							<th>操作</th>
-							<th>详细</th>
-						</tr>
-					</table>
-    			</div>
-			</div>
-
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">&emsp;&emsp;&emsp;&emsp;</label>
-				<div class="col-sm-10 bot_btn">
-					<div class="left">
-						<button class="btn btn-success">立即上线</button>
-						<button class="btn btn-success">存为草稿</button>
+			<div ng-controller="formUp">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">标题名称</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="title">
+						<b class="errorInfo" ng-show="">*此项为必填项</b>
 					</div>
-					<button class="btn btn-default">取消</button>
 				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">类&emsp;&emsp;型</label>
+					<div class="col-sm-10">
+						<select class="form-control" ng-model="type" ng-options="typeOptions.id as typeOptions.name for typeOptions in typeOptions">
+						</select>
+						<b class="errorInfo" ng-show="">*此项为必填项</b>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">说&emsp;&emsp;明</label>
+					<div class="col-sm-10">
+						<input type="url" class="form-control" ng-model="content">
+						<b class="errorInfo" ng-show="">*此项为必填项</b>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">跳转链接</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="url" />
+						<b class="errorInfo" ng-show="">*此项为必填项</b>
+					</div>
+				</div>
+			</div>
+
+			<div img-directive>
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">配&emsp;&emsp;图</label>
+					<div class="col-sm-10">
+						<input type="file" name="file" class="imgUp" onchange="angular.element(this).scope().showImg(this)" accept="image/*" />
+						<b class="errorInfo" ng-show="">*此项为必选项</b>
+						<br/>
+						<img class="look" ng-src="{{lookUrl}}" id="showView" alt="图片预览区"></img>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">&emsp;&emsp;&emsp;&emsp;</label>
+					<div class="col-sm-10">
+						<table class="table">
+							<tr>
+								<th>图片名</th>
+								<th>文件大小</th>
+								<th>进度</th>
+								<th>操作</th>
+								<th>详细</th>
+							</tr>
+							<tr ng-repeat="x in files">
+								<th>{{x.name}}</th>
+								<th>{{x.size|size}}</th>
+								<th>
+									<div class="progress">
+										<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+										 aria-valuemax="100" style="width: 20%">
+											<span class="sr-only">20% Complete</span>
+										</div>
+									</div>
+								</th>
+								<th>
+									<button class="btn btn-success nopad" ng-click="imgGo()">上传</button>
+									<button class="btn btn-danger nopad" ng-click="imgDel()">删除</button>
+								</th>
+								<th>{{x.type}}</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">&emsp;&emsp;&emsp;&emsp;</label>
+					<div class="col-sm-10 bot_btn">
+						<div class="left">
+							<button class="btn btn-success" ng-click="upLoad()">立即上线</button>
+							<button class="btn btn-success">存为草稿</button>
+						</div>
+						<button class="btn btn-default">取消</button>
+					</div>
+				</div>
+
 			</div>
 		</form>
 	</div>

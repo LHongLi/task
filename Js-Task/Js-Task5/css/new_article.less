@@ -1,39 +1,53 @@
-
-
-.create_new_article{
-	margin: .3rem;
-	border: .01rem solid #ccc;
-	border-radius: 5px;
-	p{
-		padding: .2rem;
-		width: 100%;
-		font-weight: bold;
-		border-bottom: .01rem solid #ccc;
-	}
-	.new_article_mess{
-		padding: .1rem 20% .2rem 0;
-		font-size: .15rem;
-	}
-	select{
-		width: 25%;
-	}
-	input,select,button{
-		margin-top: .035rem;
-	}
-	table{
-		width: 80%;
-		font-size: .15rem;
-		border-bottom: .02rem solid #ccc;
-		th{
-			text-align: center;
-		}
-	}
+.create_new_article {
+    margin: .3rem;
+    border: .01rem solid #ccc;
+    border-radius: 5px;
+    p {
+        padding: .2rem;
+        width: 100%;
+        font-weight: bold;
+        border-bottom: .01rem solid #ccc;
+    }
+    .new_article_mess {
+        padding: .1rem 20% .2rem 0;
+        font-size: .15rem;
+        .nopad {
+            padding: 0 .1rem;
+        }
+    }
+    select {
+        width: 25%;
+    }
+    table {
+        width: 80%;
+        font-size: .15rem;
+        border-bottom: .02rem solid #ccc;
+        th {
+            text-align: center;
+        }
+    }
 }
-.img_preview{
-	width: 8%;
-	font-size: .07rem;
+
+.bot_btn {
+    display: flex;
+    justify-content: space-between;
 }
-.bot_btn{
-	display: flex;
-	justify-content: space-between;
+
+.imgUp {
+    margin-top: .07rem;
+    border: .01rem solid #ccc;
+    border-radius: 5px;
+    background: #ccc;
+}
+
+.errorInfo {
+    margin-left: .2rem;
+    font-size: .05rem;
+    color: red;
+}
+
+.look {
+    width: 7.1rem;
+    height: 4rem;
+    border: .01rem solid #000; // background: url(../img/look.png) no-repeat 50% 50%;
 }

@@ -9,7 +9,6 @@ html {
 body {
   display: flex;
   height: 100%;
-  box-sizing: inherit;
 }
 ul,
 li,
@@ -31,6 +30,7 @@ a:focus {
   width: 100%;
 }
 .nav {
+  position: fixed;
   width: 3rem;
   height: 100%;
   font-size: .2rem;
@@ -71,6 +71,7 @@ a:focus {
 }
 .main {
   flex: 1;
+  margin-left: 3rem;
   font-size: .2rem;
 }
 .main .main_top_link {
