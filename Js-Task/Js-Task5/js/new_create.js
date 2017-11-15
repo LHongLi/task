@@ -1,5 +1,13 @@
 angular.module("myApp").controller("formUp", function ($scope, $http, $state, $stateParams) {
     $scope.editName = null;
+    //新增信息
+    $scope.type = null;
+    $scope.typeOptions = [{ id: null, name: "请选择" }, { id: "0", name: "首页Banner" }, { id: "1", name: "找精英Banner" }, { id: "2", name: "找职位Banner" }, { id: "3", name: "行业大图" }];
+    
+    $scope.industry = null;
+    $scope.industryOptions = [{ id: null, name: "请选择" }, { id: "0", name: "移动互联网" }, { id: "1", name: "电子商务" }, { id: "2", name: "企业服务" }, { id: "3", name: "O2O" }, { id: "4", name: "教育" }, { id: "5", name: "金融" }, { id: "6", name: "游戏" }];
+
+
     var con = $stateParams.id;
     console.log(con)
     if (con !== null) {
@@ -27,21 +35,11 @@ angular.module("myApp").controller("formUp", function ($scope, $http, $state, $s
     } else if (con === null) {
         $scope.editName = "新增"
     }
-    //新增信息
-    $scope.type = null;
-    $scope.industry = null;
-    $scope.typeOptions = [{ id: null, name: "请选择" }, { id: "0", name: "首页Banner" }, { id: "1", name: "找精英Banner" }, { id: "2", name: "找职位Banner" }, { id: "3", name: "行业大图" }];
-
-    $scope.industryOptions = [{ id: null, name: "请选择" }, { id: "0", name: "移动互联网" }, { id: "1", name: "电子商务" }, { id: "2", name: "企业服务" }, { id: "3", name: "O2O" }, { id: "4", name: "教育" }, { id: "5", name: "金融" }, { id: "6", name: "游戏" }];
-
     //立即上线
-
     $scope.upLoad = function (x) {
         $scope.content = editor.txt.html();
         console.log($scope.content);
-        if ($scope.myForm.$invalid || $scope.lookUrl === undefined) {
-            alert("请填写所有项目！")
-        } else {
+        if ($scope.type !== '3') {
             //判断是编辑按钮还是新增按钮
             if (con !== null) {
                 console.log("这是编辑页面...");
@@ -77,12 +75,58 @@ angular.module("myApp").controller("formUp", function ($scope, $http, $state, $s
                         industry: $scope.industry
                     }
                 }).then(function (response) {
-
                     $state.go("home.article", {
                         page: 1,
                         size: 10
                     });
                 });
+            }
+        } else {
+            if ($scope.myForm.$invalid || $scope.lookUrl === undefined) {
+                alert("请填写所有项目！")
+            } else {
+                //判断是编辑按钮还是新增按钮
+                if (con !== null) {
+                    console.log("这是编辑页面...");
+                    $http({
+                        method: "put",
+                        url: "/carrots-admin-ajax/a/u/article/" + con,
+                        params: {
+                            title: $scope.title,
+                            type: $scope.type,
+                            status: x,
+                            img: $scope.imgLink,
+                            url: $scope.imgLink,
+                            content: $scope.content,
+                            createAt: $scope.dateCreate,
+                            industry: $scope.industry
+                        }
+                    }).then(function (response) {
+                        console.log(response.data.code)
+                        $state.go("home.article", { size: 10, page: 1 });
+                    });
+                } else {
+                    console.log("这是新增页面...");
+                    $http({
+                        method: "post",
+                        url: "/carrots-admin-ajax/a/u/article",
+                        params: {
+                            title: $scope.title,
+                            type: $scope.type,
+                            status: x,
+                            img: $scope.imgLink,
+                            url: $scope.imgLink,
+                            content: $scope.content,
+                            industry: $scope.industry
+                        }
+                    }).then(function (response) {
+    
+                        $state.go("home.article", {
+                            page: 1,
+                            size: 10
+                        });
+                    });
+                }
             }
         }
     }
