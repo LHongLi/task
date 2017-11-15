@@ -1,31 +1,108 @@
-angular.module("myApp").controller("formUp", function ($scope, $http) {
-    $scope.title = null;
-    $scope.type = null;
-    $scope.typeOptions = [{ id: null, name: "请选择" }, { id: "0", name: "首页Banner" }, { id: "2", name: "找精英Banner" }, { id: "1", name: "找职位Banner" }, { id: "3", name: "行业大图" }];
-    $scope.lookUrl = null;
-    //立即上线
-    $scope.upLoad = function () {
+angular.module("myApp").controller("formUp", function ($scope, $http, $state, $stateParams) {
+    $scope.editName = null;
+    var con = $stateParams.id;
+    console.log(con)
+    if (con !== null) {
+        //编辑信息
+        $scope.editName = "编辑";
         $http({
-            method: "post",
-            url: "/carrots-admin-ajax/a/u/article",
-            params: {
-                title: $scope.title,
-                type: $scope.type,
-                status: "1",
-                img: $scope.lookUrl
-            }
+            method: "get",
+            url: "/carrots-admin-ajax/a/article/" + con,
         }).then(function (response) {
-            console.log(response.data.message);
+            var info = response.data.data;
+            var types = info.article.type;
+            type = types.toString();
+            var industrys = info.article.industry;
+            industry = industrys.toString();
+            var edit = info.article.content;
+
+            $scope.title = info.article.title;
+            $scope.type = type;
+            $scope.industry = industry;
+            $scope.lookUrl = info.article.img;
+            $scope.imgLink = info.article.url;
+            editor.txt.html(edit);
+            $scope.dateCreate = info.article.createAt;
         })
+    } else if (con === null) {
+        $scope.editName = "新增"
     }
-    //存为草稿按钮
-    //取消按钮
-    $scope.cancel = function () {
-        var no = confirm('确定放弃此次新建内容么?');
-        if (no === true) {
-            
+    //新增信息
+    $scope.type = null;
+    $scope.industry = null;
+    $scope.typeOptions = [{ id: null, name: "请选择" }, { id: "0", name: "首页Banner" }, { id: "1", name: "找精英Banner" }, { id: "2", name: "找职位Banner" }, { id: "3", name: "行业大图" }];
+
+    $scope.industryOptions = [{ id: null, name: "请选择" }, { id: "0", name: "移动互联网" }, { id: "1", name: "电子商务" }, { id: "2", name: "企业服务" }, { id: "3", name: "O2O" }, { id: "4", name: "教育" }, { id: "5", name: "金融" }, { id: "6", name: "游戏" }];
+
+    //立即上线
+
+    $scope.upLoad = function (x) {
+        $scope.content = editor.txt.html();
+        console.log($scope.content);
+        //判断是编辑按钮还是新增按钮
+        if (con !== null) {
+            console.log("这是编辑页面...");
+            $http({
+                method: "put",
+                url: "/carrots-admin-ajax/a/u/article/" + con,
+                params: {
+                    title: $scope.title,
+                    type: $scope.type,
+                    status: x,
+                    img: $scope.imgLink,
+                    url: $scope.imgLink,
+                    content: $scope.content,
+                    createAt: $scope.dateCreate,
+                    industry: $scope.industry
+                }
+            }).then(function (response) {
+                console.log(response.data.code)
+                $state.go("home.article", { size: 10, page: 1 });
+            });
+        } else {
+            console.log("这是新增页面...");
+            $http({
+                method: "post",
+                url: "/carrots-admin-ajax/a/u/article",
+                params: {
+                    title: $scope.title,
+                    type: $scope.type,
+                    status: x,
+                    img: $scope.imgLink,
+                    url: $scope.imgLink,
+                    content: $scope.content,
+                    industry: $scope.industry
+                }
+            }).then(function (response) {
+                if (response.data.code === 0) {
+                    $state.go("home.article", {
+                        page: 1,
+                        size: 10
+                    });
+                } else if (response.data.code !== 0) {
+                    alert("提交错误！请检查是否有遗漏项未填写！")
+                }
+            });
         }
     }
+
+    //取消按钮
+    $scope.cancel = function () {
+        
+        // var back = confirm("确定放弃本次编辑并返回么");
+        // if (back === true) {
+        //     $state.go("home.article", { size: 10, page: 1 });
+        // }
+        
+        console.log($scope.type);
+        console.log($scope.industry);
+    }
+
+    //富文本
+    var E = window.wangEditor;
+    var editor = new E('#editor');
+    // 或者 var editor = new E( document.getElementById('#editor') )
+    editor.create();
 });
 
 //自定义指令获取图片信息及上传
@@ -33,6 +110,7 @@ angular.module("myApp").directive("imgDirective", function ($http) {
     return {
         restrict: "EACM",
         replace: true,
+
         compile: function (tElement) {
             return {
                 post: function (scope, iElement) {
@@ -67,6 +145,7 @@ angular.module("myApp").directive("imgDirective", function ($http) {
                                 }
                             }).then(function (response) {
                                 scope.lookUrl = response.data.data.url;
+                                scope.imgLink = scope.lookUrl;
                             })
                         }
                     }
@@ -85,4 +164,6 @@ angular.module("myApp").filter("size", function () {
         return size;
     };
 })
+
+
 

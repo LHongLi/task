@@ -31,7 +31,8 @@ angular.module("myApp").controller("formTop", function ($scope, $http, $state, $
 		$scope.startDate = start;
 		var end = $stateParams.endAt;
 		end = new Date(parseInt(end));
-		$scope.endDate = end;
+		end.setHours(23, 59, 59);
+		$scope.endDate = end.getTime();
 	}
 	//搜索
 	$scope.search = function () {
@@ -153,18 +154,57 @@ angular.module("myApp").controller("myList", function ($scope, $http, $state, $s
 		$state.go("home.article", { size: $scope.disSize })
 	};
 
-	//信息操作
-	//下线
-	$scope.offLine = function () {
-
+	/**
+	 * 信息操作
+	 */
+	//上/下线
+	$scope.offLine = function (x, y) {
+		if (x === 2) {
+			var statusCode = confirm("确定要将此条信息下线并存为草稿么");
+			if (statusCode === true) {
+				x = 1;
+			}
+		} else if (x === 1) {
+			var statusCode = confirm("确定要将此条信息上线么");
+			if (statusCode === true) {
+				x = 2;
+			}
+		}
+		$http({
+			method: "put",
+			url: "/carrots-admin-ajax/a/u/article/status",
+			params: {
+				status: x,
+				id: y
+			}
+		}).then(function (response) {
+			console.log(response.data.message);
+			if (response.data.message === "success") {
+				$state.go("home.article", {}, { reload: true });
+			} else {
+				alert("操作错误，重新尝试！")
+			}
+		})
 	}
 	//编辑
-	$scope.edit = function () {
-
+	$scope.edit = function (x) {
+		$state.go("home.newArticle", { id: x })
 	}
 	//删除
-	$scope.delete = function () {
-
+	$scope.delete = function (x) {
+		$http({
+			method: "delete",
+			url: "/carrots-admin-ajax/a/u/article/" + x,
+		}).then(function (response) {
+			var backInfo = response.data;
+			console.log(backInfo.message)
+			if (backInfo.message === "success") {
+				alert("删除成功")
+				$state.go("home.article", {}, { reload: true })
+			} else {
+				alert("删除失败！请稍后重试！")
+			}
+		})
 	}
 
 });
@@ -196,5 +236,17 @@ angular.module("myApp").filter("type", function () {
 			return status;
 		}
 	}
-});
+}).filter("btn", function () {
+	return function (status) {
+		if (status === 1) {
+			status = "上线";
+			return status;
+		} else if (status === 2) {
+			status = "下线";
+			return status;
+		}
+	}
+})
+
+
 

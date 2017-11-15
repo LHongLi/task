@@ -1,39 +1,53 @@
-<div class="create_new_article">
-	<p>新增Article</p>
+<div class="create_new_article" ng-controller="formUp">
+	<p class="new_title">{{editName}}Article</p>
 	<div class="new_article_mess">
-		<form class="form-horizontal" ng-controller="formUp" name="myForm">
+		<form class="form-horizontal" name="myForm" novalidate>
 
 			<div>
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">标题名称</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" ng-model="title" required>
-						<b class="errorInfo" ng-show="">*此项为必填项</b>
+						<input type="text" class="form-control" name="title" ng-model="title" required>
+						<b class="errorInfo" name="titile" ng-show="myForm.title.$error.required">*此项为必填项</b>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">类&emsp;&emsp;型</label>
 					<div class="col-sm-10">
-						<select class="form-control" ng-model="type" ng-options="typeOptions.id as typeOptions.name for typeOptions in typeOptions">
+						<select class="form-control" ng-model="type" name="type" required ng-options="typeOptions.id as typeOptions.name for typeOptions in typeOptions">
 						</select>
-						<b class="errorInfo" ng-show="">*此项为必填项</b>
+						<b class="errorInfo" ng-show="myForm.type.$error.required">*此项为必填项</b>
 					</div>
 				</div>
+
+				<div class="form-group" ng-show="type === '3'">
+					<label for="inputEmail3" class="col-sm-2 control-label">行&emsp;&emsp;业</label>
+					<div class="col-sm-10">
+						<select class="form-control" ng-model="industry" name="industry" required ng-options="industryOptions.id as industryOptions.name for industryOptions in industryOptions">
+						</select>
+
+						<b class="errorInfo" ng-show="myForm.industry.$error.required">*此项为必填项</b>
+					</div>
+				</div>
+
 
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">说&emsp;&emsp;明</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" ng-model="content">
-						<b class="errorInfo" ng-show="">*此项为必填项</b>
+						<!-- 富文本编辑器 -->
+						<div id="editor">
+						</div>
 					</div>
+
 				</div>
 
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-2 control-label" >跳转链接</label>
+					<label for="inputEmail3" class="col-sm-2 control-label">跳转链接</label>
 					<div class="col-sm-10">
-						<input type="url" class="form-control" required/>
-						<b class="errorInfo" ng-show="">*此项为必填项</b>
+						<input type="text" name="aaa" ng-model="imgLink" class="form-control" required/>
+						<b class="errorInfo" ng-show="myForm.aaa.$error.required">*此项为必填项</b>
+						<b class="errorInfo" ng-show="myForm.aaa.$error.url">*链接格式不正确</b>
 					</div>
 				</div>
 			</div>
@@ -42,8 +56,8 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">配&emsp;&emsp;图</label>
 					<div class="col-sm-10">
-						<input type="file" name="file" class="imgUp" onchange="angular.element(this).scope().showImg(this)" accept="image/*" />
-						<b class="errorInfo" ng-show="">*此项为必选项</b>
+						<input type="file" name="file" class="imgUp" onchange="angular.element(this).scope().showImg(this)" accept="image/*" required/>
+						<b class="errorInfo" ng-show="myForm.file.$error.required">*图片不能为空</b>
 						<br/>
 						<img class="look" src="{{lookUrl}}" id="showView" alt="图片预览区"></img>
 					</div>
@@ -84,13 +98,13 @@
 					<label for="inputEmail3" class="col-sm-2 control-label">&emsp;&emsp;&emsp;&emsp;</label>
 					<div class="col-sm-10 bot_btn">
 						<div class="left">
-							<button class="btn btn-success" ng-click="upLoad()" >立即上线</button>
-							<button class="btn btn-success">存为草稿</button>
+							<button class="btn btn-success" ng-click="upLoad(2)">立即上线</button>
+							<button class="btn btn-success" ng-click="upLoad(1)">存为草稿</button>
 						</div>
-						<button class="btn btn-default" ng-click="cancel()" ui-sref="home.article">取消</button>
+						<button class="btn btn-default" ng-click="cancel()">取消</button>
 					</div>
 				</div>
-				
+
 			</div>
 
 

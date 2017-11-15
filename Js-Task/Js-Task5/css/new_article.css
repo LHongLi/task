@@ -3,7 +3,7 @@
   border: .01rem solid #ccc;
   border-radius: 5px;
 }
-.create_new_article p {
+.create_new_article .new_title {
   padding: .2rem;
   width: 100%;
   font-weight: bold;
