@@ -26,7 +26,6 @@
 					<div class="col-sm-10">
 						<select class="form-control" ng-model="industry" name="industry" required ng-options="industryOptions.id as industryOptions.name for industryOptions in industryOptions">
 						</select>
-
 						<b class="errorInfo" ng-show="myForm.industry.$error.required">*此项为必填项</b>
 					</div>
 				</div>
@@ -45,7 +44,7 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">跳转链接</label>
 					<div class="col-sm-10">
-						<input type="text" name="aaa" ng-model="imgLink" class="form-control" required/>
+						<input type="url" name="aaa" ng-model="imgLink" class="form-control" required/>
 						<b class="errorInfo" ng-show="myForm.aaa.$error.required">*此项为必填项</b>
 						<b class="errorInfo" ng-show="myForm.aaa.$error.url">*链接格式不正确</b>
 					</div>
@@ -56,8 +55,8 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">配&emsp;&emsp;图</label>
 					<div class="col-sm-10">
-						<input type="file" name="file" class="imgUp" onchange="angular.element(this).scope().showImg(this)" accept="image/*" required/>
-						<b class="errorInfo" ng-show="myForm.file.$error.required">*图片不能为空</b>
+						<input type="file" name="img" class="imgUp" onchange="angular.element(this).scope().showImg(this)" accept="image/*" required/>
+						<b class="errorInfo" ng-show="myForm.img.$error.required">*图片不能为空</b>
 						<br/>
 						<img class="look" src="{{lookUrl}}" id="showView" alt="图片预览区"></img>
 					</div>
@@ -104,10 +103,7 @@
 						<button class="btn btn-default" ng-click="cancel()">取消</button>
 					</div>
 				</div>
-
 			</div>
-
-
 		</form>
 	</div>
 </div>

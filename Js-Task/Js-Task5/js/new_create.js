@@ -39,61 +39,62 @@ angular.module("myApp").controller("formUp", function ($scope, $http, $state, $s
     $scope.upLoad = function (x) {
         $scope.content = editor.txt.html();
         console.log($scope.content);
-        //判断是编辑按钮还是新增按钮
-        if (con !== null) {
-            console.log("这是编辑页面...");
-            $http({
-                method: "put",
-                url: "/carrots-admin-ajax/a/u/article/" + con,
-                params: {
-                    title: $scope.title,
-                    type: $scope.type,
-                    status: x,
-                    img: $scope.imgLink,
-                    url: $scope.imgLink,
-                    content: $scope.content,
-                    createAt: $scope.dateCreate,
-                    industry: $scope.industry
-                }
-            }).then(function (response) {
-                console.log(response.data.code)
-                $state.go("home.article", { size: 10, page: 1 });
-            });
+        if ($scope.myForm.$invalid || $scope.lookUrl === undefined) {
+            alert("请填写所有项目！")
         } else {
-            console.log("这是新增页面...");
-            $http({
-                method: "post",
-                url: "/carrots-admin-ajax/a/u/article",
-                params: {
-                    title: $scope.title,
-                    type: $scope.type,
-                    status: x,
-                    img: $scope.imgLink,
-                    url: $scope.imgLink,
-                    content: $scope.content,
-                    industry: $scope.industry
-                }
-            }).then(function (response) {
-                if (response.data.code === 0) {
+            //判断是编辑按钮还是新增按钮
+            if (con !== null) {
+                console.log("这是编辑页面...");
+                $http({
+                    method: "put",
+                    url: "/carrots-admin-ajax/a/u/article/" + con,
+                    params: {
+                        title: $scope.title,
+                        type: $scope.type,
+                        status: x,
+                        img: $scope.imgLink,
+                        url: $scope.imgLink,
+                        content: $scope.content,
+                        createAt: $scope.dateCreate,
+                        industry: $scope.industry
+                    }
+                }).then(function (response) {
+                    console.log(response.data.code)
+                    $state.go("home.article", { size: 10, page: 1 });
+                });
+            } else {
+                console.log("这是新增页面...");
+                $http({
+                    method: "post",
+                    url: "/carrots-admin-ajax/a/u/article",
+                    params: {
+                        title: $scope.title,
+                        type: $scope.type,
+                        status: x,
+                        img: $scope.imgLink,
+                        url: $scope.imgLink,
+                        content: $scope.content,
+                        industry: $scope.industry
+                    }
+                }).then(function (response) {
+
                     $state.go("home.article", {
                         page: 1,
                         size: 10
                     });
-                } else if (response.data.code !== 0) {
-                    alert("提交错误！请检查是否有遗漏项未填写！")
-                }
-            });
+                });
+            }
         }
     }
 
     //取消按钮
     $scope.cancel = function () {
-        
+
         // var back = confirm("确定放弃本次编辑并返回么");
         // if (back === true) {
         //     $state.go("home.article", { size: 10, page: 1 });
         // }
-        
+
         console.log($scope.type);
         console.log($scope.industry);
     }
