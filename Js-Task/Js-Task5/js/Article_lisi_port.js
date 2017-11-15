@@ -25,21 +25,23 @@ angular.module("myApp").controller("formTop", function ($scope, $http, $state, $
 	//格式化类型/状态
 	$scope.typeUrl = $stateParams.type;
 	$scope.statusUrl = $stateParams.status;
-	if ($stateParams.startAt !== undefined & $stateParams.endAt !== undefined) {
+	if ($stateParams.startAt !== null & $stateParams.endAt !== null) {
+		console.log("aaaa")
 		var start = $stateParams.startAt;
 		start = new Date(parseInt(start));
 		$scope.startDate = start;
 		var end = $stateParams.endAt;
 		end = new Date(parseInt(end));
-		end.setHours(23, 59, 59);
-		$scope.endDate = end.getTime();
+		$scope.endDate = end;
 	}
 	//搜索
 	$scope.search = function () {
 		if ($scope.startDate !== undefined & $scope.endDate !== undefined) {
+			console.log("有日期")
 			var start = new Date($scope.startDate);
 			$scope.startAt = start.getTime();
 			var end = new Date($scope.endDate);
+			end.setHours(23, 59, 59);
 			$scope.endAt = end.getTime();
 			$state.go("home.article", {
 				page: 1,
@@ -49,7 +51,9 @@ angular.module("myApp").controller("formTop", function ($scope, $http, $state, $
 				endAt: $scope.endAt
 			})
 		} else if ($scope.startAt === undefined & $scope.endAt === undefined) {
+			console.log("有日期")
 			$state.go("home.article", {
+				
 				page: 1,
 				type: $scope.typeUrl,
 				status: $scope.statusUrl

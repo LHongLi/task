@@ -89,14 +89,10 @@ angular.module("myApp").controller("formUp", function ($scope, $http, $state, $s
 
     //取消按钮
     $scope.cancel = function () {
-
-        // var back = confirm("确定放弃本次编辑并返回么");
-        // if (back === true) {
-        //     $state.go("home.article", { size: 10, page: 1 });
-        // }
-
-        console.log($scope.type);
-        console.log($scope.industry);
+        var back = confirm("确定放弃本次编辑并返回么");
+        if (back === true) {
+            $state.go("home.article", { size: 10, page: 1 });
+        }
     }
 
     //富文本
